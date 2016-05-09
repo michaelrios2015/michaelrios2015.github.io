@@ -106,56 +106,37 @@ var projects = { //array of objects with
 
         },
 		{
-            "title": "Hangman C++",
+            "title": "Poker C++",
             "dates": "2014",
-            "description": "Made hangman with C++",
+            "description": "Poker made with C++",
             "images": ["../Project_1_generic_website/images/cat-smaller.jpg", "../Project_1_generic_website/images/cat-smaller.jpg"]
-
-        }		 
-				 
+        }		 				 
     ]
 }
 
 //DISPLAY EDUCATION!!
 projects.display = function() {
-    console.log("hello");
-
-
+//    console.log("hello");
     for (project in projects.projects) {
 
         $("#projects").append(HTMLprojectStart);
 
         var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-
-        console.log("hello");
-
         var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-
-
         var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
 
-
         $(".project-entry:last").append(formattedTitle);
-
         $(".project-entry:last").append(formattedDates);
-
         $(".project-entry:last").append(formattedDescription);
 
         for (image in projects.projects[project].images) {
 
             var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-            console.log("images");
+            //console.log("images");
 
             $(".project-entry:last").append(formattedImage);
-
-
         }
-
     }
-
-
-
-
 }
 
 projects.display();
@@ -179,15 +160,21 @@ var education = {
             "degree": "BA",
             "majors": ["Art"],
             "dates": "1995-1999",
-            "url": "http://www.cats2.com"
+            "url": "http://www.columbia.edu/"
         },
     ],
     "onlineCourses": [{ //array with ?????? this maybe wrong
             "title": "FEND",
             "school": "Udacity",
             "date": 2016,
-            "url": "www.udacity.com"
-        }
+            "url": "http://www.udacity.com"
+        },
+        { //array with ?????? this maybe wrong
+            "title": "FEND",
+            "school": "Udacity",
+            "date": 2016,
+            "url": "http://www.udacity.com"
+        }              
     ]
     //display: function taking no parameters
 }
@@ -195,40 +182,23 @@ var education = {
 
 //DISPLAY EDUCATION!!
 education.display = function() {
-    console.log("hello");
-
 
     for (school in education.schools) {
 
-
         $("#education").append(HTMLschoolStart);
-
+    
         var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
-
-
         var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
-
-        varformattedNameDegree = formattedSchoolName + formattedSchoolDegree;
-
+        var formattedNameDegree = formattedSchoolName + formattedSchoolDegree;
         var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
-
-        //console.log("hello");
-
         var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
-
         var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
-
-
-
-        $(".education-entry:last").append(varformattedNameDegree);
-
-        $(".education-entry:last a").attr("href", education.schools[school].url)
-
-
+        var url = education.schools[school].url;
+        
+        $(".education-entry:last").append(formattedNameDegree);
+        $(".education-entry:last a").attr('href', url);
         $(".education-entry:last").append(formattedDates);
-
         $(".education-entry:last").append(formattedLocation);
-
 
         for (major in education.schools[school].majors) {
 
@@ -236,48 +206,28 @@ education.display = function() {
             //console.log(formattedMajor);
 
             $(".education-entry:last").append(formattedMajor);
-
-
         }
-
     }
 
-    $("#education").append(HTMLschoolStart);
+    //$("#education").append(HTMLschoolStart);
+        $("#education").append(HTMLonlineClasses);
+        
 
-    $(".education-entry:last").append(HTMLonlineClasses);
     for (online in education.onlineCourses) {
-
         $("#education").append(HTMLschoolStart);
-
         var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[online].title);
-
         var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[online].school);
-
         var formattedSchoolTitle = formattedTitle + formattedSchool;
-
-        $(".education-entry:last").append(formattedSchoolTitle);
-
         var formattedDate = HTMLonlineDates.replace("%data%", education.onlineCourses[online].date);
-
-        $(".education-entry:last").append(formattedDate);
-
-
         var formattedUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[online].url);
 
+        $(".education-entry:last").append(formattedSchoolTitle);
+        $(".education-entry:last").append(formattedDate);
         $(".education-entry:last").append(formattedUrl);
-
-
+                $(".education-entry:last a").attr('href', education.onlineCourses[online].url );
     }
-
 }
 
-
-
-
-
 education.display();
-
-
-
 
 $("#mapDiv").append(googleMap);
