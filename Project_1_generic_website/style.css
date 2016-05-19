@@ -20,3 +20,12 @@ article p {
     color: #747704;
     margin-bottom: 0px;
 }
+
+#cat {
+    margin-top: 1em;
+}
+
+.modal-body{
+    margin-right: 25%;
+    margin-left: 25%; 
+}
