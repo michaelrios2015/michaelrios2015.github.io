@@ -23,16 +23,11 @@ var Engine = (function(global) {
         win = global.window,
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'),
-        //canvas2 = doc.createElement('canvas'),
-        //ctx = canvas2.getContext('2d'),
         lastTime;
 
-    canvas.width = 505;
-    canvas.height = 606;
-    //canvas2.width = 200;
-    //canvas2.height = 606;
+        canvas.width = 505;
+        canvas.height = 606;
     doc.body.appendChild(canvas);
-    //doc.body.appendChild(canvas2);
 
 
     /* This function serves as the kickoff point for the game loop itself
@@ -40,28 +35,8 @@ var Engine = (function(global) {
      */
 
 
-    // added because I was having trouble figuring out where I was on the canvas, taken from stakoverflow    
-    canvas.addEventListener('mousemove', function(e) {
-
-        var pos = getMousePos(canvas, e), /// provide this canvas and event
-            x = pos.x,
-            y = pos.y;
-
-        //console.log("x = " + x + " y" + y);
-        // check x and y against the grid
-
-    }, false);
-
-    function getMousePos(canvas, e) {
-        var rect = canvas.getBoundingClientRect();
-        return {
-            x: e.clientX - rect.left,
-            y: e.clientY - rect.top
-        };
-    }
-
-
     function main() {
+
         /* Get our time delta information which is required if your game
          * requires smooth animation. Because everyone's computer processes
          * instructions at different speeds we need a constant value that
@@ -74,9 +49,35 @@ var Engine = (function(global) {
         /* Call our update/render functions, pass along the time delta to
          * our update function since it may be used for smooth animation.
          */
-        update(dt);
-        render();
+        //START SCREEN TODO probably should be it's own function
+        if (gameStart) {
+            console.log("start game");
+            ctx.fillStyle = "#FF00FF";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.font = "20px Georgia ";
+            ctx.fillStyle = "black";
+            ctx.fillText("choose your character:", 10, 200);
+            ctx.drawImage(Resources.get('images/char-boy.png'), 0, 300);
+            ctx.drawImage(Resources.get('images/char-cat-girl.png'), 80, 300);
+            ctx.drawImage(Resources.get('images/char-horn-girl.png'), 160, 300);
+            ctx.drawImage(Resources.get('images/char-pink-girl.png'), 240, 300);
+            ctx.drawImage(Resources.get('images/char-princess-girl.png'), 320, 300);
 
+        //END SCREEN TODO same as above    
+        } else if (gameLost) {
+            //console.log("sorry game over, press spacebar to start over");
+            ctx.fillStyle = "black";
+            ctx.fillText("Game Over", COL_WIDTH, 200);
+            ctx.fillText("Press spacebar to start over", COL_WIDTH, 230);
+        //WE are Playing the game
+        } else {
+            //Earases start screen
+            ctx.fillStyle = "white";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            update(dt);
+            render();
+        }
         /* Set our lastTime variable which is used to determine the time delta
          * for the next time this function is called.
          */
@@ -87,6 +88,7 @@ var Engine = (function(global) {
          */
         win.requestAnimationFrame(main);
     }
+
 
     /* This function does some initial setup that should only occur once,
      * particularly setting the lastTime variable that is required for the
@@ -109,12 +111,11 @@ var Engine = (function(global) {
      * on the entities themselves within your app.js file).
      */
 
-    function update(dt) {
-        //console.log("update");        
+    function update(dt) { 
         updateEntities(dt);
-        // checkCollisions();
+        // checkCollisions(); should it be it's own function
         player.alive(allEnemies);
-        //allEnemies[0].more(score.points);
+        //allEnemies[0].more(score.points); trying to increase # of enemies
     }
 
     /* This is called by the update function  and loops through all of the
@@ -129,7 +130,6 @@ var Engine = (function(global) {
         allEnemies.forEach(function(enemy) {
             enemy.update(dt);
         });
-        //enemy.update();
         player.update();
     }
 
@@ -145,11 +145,11 @@ var Engine = (function(global) {
          * for that particular row of the game level.
          */
         var rowImages = [
-            'images/water-block.png', // Top row is water
+            'images/grass-block.png', // Top row is Grass water does not make sense
             'images/stone-block.png', // Row 1 of 3 of stone
             'images/stone-block.png', // Row 2 of 3 of stone
             'images/stone-block.png', // Row 3 of 3 of stone
-            'images/grass-block.png', // Row 1 of 2 of grass
+            'images/stone-block.png', // Row 1 of 2 of grass
             'images/grass-block.png' // Row 2 of 2 of grass
         ],
             numRows = 6,
@@ -175,6 +175,8 @@ var Engine = (function(global) {
 
 
         renderEntities();
+
+
     }
 
     /* This function is called by the render function and is called on each game
@@ -189,11 +191,9 @@ var Engine = (function(global) {
         allEnemies.forEach(function(enemy) {
             enemy.render();
         });
-        //console.log("render");
-        //enemy.render();
-        player.render();
         ctx.clearRect(0, 0, 505, 50);
-        score.render();
+        player.render();
+
     }
 
     /* This function does nothing but it could have been a good place to
@@ -214,7 +214,11 @@ var Engine = (function(global) {
             'images/water-block.png',
             'images/grass-block.png',
             'images/enemy-bug.png',
-            'images/char-boy.png'
+            'images/char-boy.png',
+            'images/char-cat-girl.png',
+            'images/char-horn-girl.png',
+            'images/char-pink-girl.png',
+            'images/char-princess-girl.png'
         ]);
     Resources.onReady(init);
 
