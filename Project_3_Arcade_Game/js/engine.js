@@ -56,7 +56,9 @@ var Engine = (function(global) {
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             ctx.font = "20px Georgia ";
             ctx.fillStyle = "black";
-            ctx.fillText("choose your character:", 10, 200);
+            ctx.fillText("Bogger, no relation to frogger ;)", 10, 100);
+            ctx.fillText("Start Game", 10, 150);
+            ctx.fillText("choose your character: 1-5", 10, 200);
             ctx.drawImage(Resources.get('images/char-boy.png'), 0, 300);
             ctx.drawImage(Resources.get('images/char-cat-girl.png'), 80, 300);
             ctx.drawImage(Resources.get('images/char-horn-girl.png'), 160, 300);
@@ -228,3 +230,17 @@ var Engine = (function(global) {
      */
     global.ctx = ctx;
 })(this);
+
+
+/* possible method of clicking on a canvas to choose character
+$('#myCanvas').click(function (e) {
+    var clickedX = e.pageX - this.offsetLeft;
+    var clickedY = e.pageY - this.offsetTop;
+    
+    for (var i = 0; i < circles.length; i++) {
+        if (clickedX < circles[i].right && clickedX > circles[i].left && clickedY > circles[i].top && clickedY < circles[i].bottom) {
+            alert ('clicked number ' + (i + 1));
+        }
+    }
+});
+*/
