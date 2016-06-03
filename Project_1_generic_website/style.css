@@ -29,3 +29,36 @@ article p {
     margin-right: 25%;
     margin-left: 25%; 
 }
+
+.title{
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.project {
+    text-align: center;
+}
+
+
+
+@media (max-width: 500px) {
+
+    .project {
+    text-align: left;
+}
+    .title{
+    text-align: left;
+
+}
+
+    
+}
+
+@media (max-width: 500px) {
+.img-responsive{
+    display: none;
+
+}
+
+    
+}
