@@ -213,3 +213,19 @@ span {
     display: block;
   }
 }
+
+@media (max-width: 768px) {
+
+	
+ img{
+		display: none;}
+
+    
+}
+
+ #mapDiv{
+		display: none;}
+
+    
+}
+

@@ -41,7 +41,7 @@ article p {
 
 
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
 
     .project {
     text-align: left;
@@ -51,14 +51,11 @@ article p {
 
 }
 
-    
-}
-
-@media (max-width: 500px) {
-.img-responsive{
-    display: none;
-
-}
+	.img-responsive{
+		display: none;}
 
     
 }
+
+
+

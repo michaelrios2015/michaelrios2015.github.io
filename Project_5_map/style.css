@@ -3,7 +3,21 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
 .my-map {
-    height: 50%;
+    height: 25em;
+  
+	
+}
+input[type=text] {
     width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.title{
+	text-align: center;
+	text-transform: uppercase;
+	padding-bottom: 1em;
 }

@@ -3,7 +3,7 @@
 //Global variables 
 
 var map;
-
+var	infoContent = [];
 var infowindow;
 
 //part of an attempt to move my bounds variable, not succesful
@@ -30,18 +30,31 @@ var wikiApi = function(name) {
             //should know what that [1] does 
             var articleList = response[1];
             //console.log(articleList);
-
+			var totalContent;
             var length = articleList.length;
-
+ infoContent = [];
             //console.log(articleList.length);
+			//really just need the first one for the content??
             for (var i = 0; i < length; i++) {
                 var articleStr = articleList[i];
-                var url = 'http://en.wikipedia.org/wiki/' + articleStr;
+                console.log(articleStr);
+				var url = 'http://en.wikipedia.org/wiki/' + articleStr;
                 var urlLink = ('<p> From our friends at Wikipedia ' + '<a href="' + url + '">' + articleStr + '</a></p>');
-                infowindow.setContent('<h3>' + name + '</h3>' + " " + urlLink);
+                
+				var content = '<h3>' + name + '</h3>' + " " + urlLink;
+				infoContent.push(content);
+				infowindow.setContent(infoContent[0]  );
 
             }
 
+		//extra content maybe put on bottom???
+	for (var i = 1; i < length; i++) {
+		totalContent += infoContent[i];
+		console.log(totalContent);
+	}
+//infowindow.setContent(totalContent);
+
+		console.log(infoContent);
             clearTimeout(wikiRequestTimeout);
         });
 

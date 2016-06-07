@@ -274,3 +274,4 @@ Player.prototype.gameOver = function(lives) {
 
 
 var player = new Player();
+

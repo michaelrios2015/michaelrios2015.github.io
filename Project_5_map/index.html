@@ -6,11 +6,20 @@
         <meta charset="utf-8">.
         <title>Mapping maps</title>
         <link rel="stylesheet" href="style.css">
+		        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </head>
 
     <body>
 
-        <div id="container1">
+		<div class="container">
+		
+			<div class="row">
+			<div class="col-md-12 title">Interesting Places smiling faces :)</div>
+			</div>
+			<div class="row">
+        <div id="container1" class="col-md-3">
             <form data-bind="event: { keyup: filter}">
                 <input data-bind="textInput: Search" type="text">
                 <br>
@@ -24,12 +33,16 @@
             </div>
         </div>
 
-        <div id="container2">
-            <div data-bind="text: error"></div>
+ 
+
+			<div data-bind="text: error" id="map" class="my-map col-md-9" ></div>
+</div>
+			
+			       <div>
+            <div class="col-md-9" id="container2" data-bind="text: error"></div>
         </div>
 
-        <div data-bind="text: error" id="map" class="my-map"></div>
-
+			</div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
         <script src="script.js"></script>

@@ -18,7 +18,7 @@ Hmmm I would like to add a bunch more
 ### How to Play
 
 1. Use arrow keys to control our hero
-2. avoid teh bugs
+2. avoid the bugs
 3. get to the top
 
 
