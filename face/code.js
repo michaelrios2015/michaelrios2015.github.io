@@ -15,6 +15,8 @@ var ctx = canvas.getContext("2d");
 var box = new drawBoxWDot(0, 0, 10 ,10)
 	var goingR = true;
 
+ var img= new Image();
+img.src = "llama.jpg";
 
 var render = function () {
 //background color
@@ -24,6 +26,10 @@ var render = function () {
     //computer.render();
     //ball.render();
 	console.log("render");
+    
+     
+ 
+    
 };
 
 var headX = width/4;
@@ -51,7 +57,7 @@ ctx.strokeRect(this.x, this.y, this.height, this.width);
 
 ctx.fillStyle = "#0000FF";
 ctx.fillRect(this.x + this.width/4 , this.y + this.height/4, this.width/4, this.height/4);
-
+   ctx.drawImage(img,this.x/4,10);
 
 }
 
