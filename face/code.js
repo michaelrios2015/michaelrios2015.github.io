@@ -1,6 +1,6 @@
 console.log("hello");
 
-var animate = window.requestAnimationFrame 
+var animate = window.requestAnimationFrame;
 
 var canvas = document.createElement("canvas");
 canvas.id = 'cID';
@@ -11,88 +11,139 @@ canvas.width = width;
 canvas.height = height;
 
 var ctx = canvas.getContext("2d");
+var boxes = [];
+var box = new drawBoxWDot(0, 0, 10, 10);
+var box2 = new drawBoxWDot(50, 0, 10, 10);
 
-var box = new drawBoxWDot(0, 0, 10 ,10)
-	var goingR = true;
 
- var img= new Image();
+
+var goingR = true;
+
+//boxes.push(box);
+
+
+for (var i = 0; i < 10; i++) {
+    boxes[i] = new drawBoxWDot(i * 10, 0, 10, 10);
+    console.log(boxes[i]);
+    //boxes[i].render();
+}
+
+
+
+var img = new Image();
 img.src = "llama.jpg";
 
-var render = function () {
-//background color
-	ctx.fillStyle = "#FF00FF";
+
+console.log(boxes);
+
+var render = function() {
+    //background color
+    ctx.fillStyle = "#FF00FF";
     ctx.fillRect(0, 0, width, height);
-    box.render();
+    box2.render();
     //computer.render();
     //ball.render();
-	console.log("render");
-    
-     
- 
-    
+    console.log("render");
+
+    //ctx.rotate(.005);
+    ctx.drawImage(img, 100, 100);
+    for (var i = 0; i < boxes.length; i++) {
+        console.log(boxes[i]);
+        console.log(box);
+        box.render();
+        boxes[i].render();
+    }
+
 };
 
-var headX = width/4;
-	headY = height/8;
-
-	headWidth = height/2;
-	headHeight = height/2;
 
 
-function drawBoxWDot(x, y, width, height){
-	
-   this.x = x;
+var headX = width / 4;
+headY = height / 8;
+
+headWidth = height / 2;
+headHeight = height / 2;
+
+
+function drawBoxWDot(x, y, height, width) {
+
+    this.x = x;
     this.y = y;
     this.width = width;
     this.height = height;
-	this.xVelocity = 1;
+    this.xVelocity = 1;
 }
 
 drawBoxWDot.prototype.render = function() {
-	
-	
-	ctx.strokeStyle = "#000000";
-ctx.lineWidth = 4;
-ctx.strokeRect(this.x, this.y, this.height, this.width);
-
-ctx.fillStyle = "#0000FF";
-ctx.fillRect(this.x + this.width/4 , this.y + this.height/4, this.width/4, this.height/4);
-   ctx.drawImage(img,this.x/4,10);
-
-}
 
 
+    ctx.strokeStyle = "#000000";
+    ctx.lineWidth = 4;
+    ctx.strokeRect(this.x, this.y, this.width, this.height);
 
-drawBoxWDot.prototype.update = function () {
+    ctx.fillStyle = "#0000FF";
+    ctx.fillRect(this.x + this.width / 4, this.y + this.height / 4, this.width / 4, this.height / 4);
 
-	
-	if (this.x < width && goingR ){
-		this.x += 1;
-		
-	}
-	else if (this.x >= width)
-	{
-		this.x -= 1;
-		goingR = false;
-	}
-	else if (this.x > 0 && !goingR){
-		this.x -= 1;
-	}
-	else{
-		goingR = true;
-	}
-	console.log(this.x);
-	
-}
+};
 
 
+box.render();
 
-var step = function () {
+
+drawBoxWDot.prototype.update = function() {
+
+
+    if (this.width < width && goingR) {
+        this.width += 1;
+
+        this.height += 1;
+        //this.x +=1;
+
+
+        //boxes.push(new drawBoxWDot(0, 0, 10 ,10)); 
+    } else if (this.width >= width) {
+        this.width -= 1;
+        this.height -= 1;
+        goingR = false;
+    } else if (this.width > 0 && !goingR) {
+        this.width -= 1;
+        this.height -= 1;
+    } else {
+        goingR = true;
+    }
+    console.log(this.x);
+
+};
+
+
+
+var step = function() {
     box.update();
+    box2.update();
+
+    for (var i = 0; i < boxes.length; i++) {
+        boxes[i].update();
+    }
+
+
     render();
     animate(step);
-	console.log("step");
+    console.log("step");
 };
+
+
+
+window.onload = function() {
+    document.body.appendChild(canvas);
+    animate(step);
+};
+
+
+
+
+
+
+
 
 //Draw a head
 ctx.strokeStyle = "#000000";
@@ -101,11 +152,11 @@ ctx.strokeRect(headX, headY, headWidth, headHeight);
 
 //right eye
 ctx.fillStyle = "#0000FF";
-ctx.fillRect(headX + headWidth/10, headY + headHeight/3, headWidth/10, headHeight/10);
+ctx.fillRect(headX + headWidth / 10, headY + headHeight / 3, headWidth / 10, headHeight / 10);
 
 //right eyeball
 ctx.fillStyle = "#000000";
-ctx.fillRect(headX + headWidth/10, headY + headHeight/3 , headWidth/20, headHeight/20);
+ctx.fillRect(headX + headWidth / 10, headY + headHeight / 3, headWidth / 20, headHeight / 20);
 
 
 //left eye
@@ -122,10 +173,17 @@ ctx.fillStyle = "#000000";
 ctx.fillRect(150, 200, 50, 50);
 
 
-window.onload = function() {
-  document.body.appendChild(canvas);
-	 animate(step);
-};
+
+
+
+
+
+
+
+
+
+
+
 
 //var i = 0;
 //var keysDown = {};
@@ -258,7 +316,7 @@ ctx.strokeRect(100, 100, 100, 100);
 		ctx.fillStyle =  "#0000FF";
 		ctx.fillRect(100, 120, 40, 40);
 }
-*/	 	    
+*/
 
 
 /*
