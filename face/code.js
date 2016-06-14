@@ -38,8 +38,8 @@ console.log(boxes);
 
 var render = function() {
     //background color
-    ctx.fillStyle = "#FF00FF";
-    ctx.fillRect(0, 0, width, height);
+    //ctx.fillStyle = "#FF00FF";
+    //ctx.fillRect(0, 0, width, height);
     box2.render();
     //computer.render();
     //ball.render();
