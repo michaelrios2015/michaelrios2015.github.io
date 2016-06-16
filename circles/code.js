@@ -25,8 +25,8 @@ headWidth = height / 2;
 headHeight = height / 2;
 
 
-//ctx.fillStyle = "#FF00FF";
-//ctx.fillRect(0, 0, width, height);
+ctx.fillStyle = "#FF00FF";
+ctx.fillRect(0, 0, width, height);
 
 
 var render = function() {
