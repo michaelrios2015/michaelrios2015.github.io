@@ -14,10 +14,11 @@ var ctx = canvas.getContext("2d");
 var cirlce = new drawCirlce(200, 200, 40, 0, .5);
 var color = "#000000";
 var speed = 10;
+var counterC = true;
 
 var goingR = true;
 
-
+var sColor="red";
 var headX = width / 4;
 headY = height / 8;
 
@@ -58,12 +59,13 @@ drawCirlce.prototype.render = function() {
 //	ctx.beginPath();
 //ctx.arc(this.x,this.y, this.radius, this.startAngle,this.finishAngle);
 
-	ctx.stroke();
+	//ctx.stroke();
 ctx.beginPath();
 ctx.moveTo(this.x,this.y);
 ctx.lineTo(this.x + this.radius * Math.cos(this.finishAngle), this.y + this.radius*Math.sin(this.finishAngle));
 	//console.log(this.y +  this.radius * Math.sin(this.finishAngle - this.startAngle));
-ctx.stroke();
+ctx.strokeStyle=sColor;
+	ctx.stroke();
 	
 	
 };
@@ -73,11 +75,19 @@ ctx.stroke();
 
 drawCirlce.prototype.update = function() {
 
-if(this.finishAngle <= 2.5*Math.PI){
+if(this.finishAngle <= 2.5*Math.PI && counterC){
     this.radius += 1;	
 	
 //this.startAngle += .01;
  this.finishAngle += .01;}
+	else if(this.finishAngle > 0){
+		this.finishAngle -=.01;
+		counterC = false;
+		sColor="black";
+	} else{
+		counterC = true;
+		sColor ="red";
+	}
     
 	
 
