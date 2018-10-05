@@ -8,6 +8,13 @@
       <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="style.css">
+	  <style>
+       /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
    </head>
    <body>
       <div class="container">
@@ -53,13 +60,60 @@
 <p>The origin</p>
                      </section>
       </article>
+	  
+	  
+	      <h3>My Google Maps Demo</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script>
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  var uluru = {lat: -25.344, lng: 131.036};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCa5cSvLuzwwSeEN-EpgKERJp6mYKpOmog&callback=initMap" onerror="googleError()" async defer>
+            
+        </script>
+		
+		
+	        <article class="row">
+         <section class="row">
+            <div class="col-md-12">
+
+			 </div>
+
+         </section>
+      </article>
 	        <article class="row">
          <section class="row">
             <div class="col-md-6">
-               <img class="img-responsive"  src="images/jungle_1.jpg" width="50%" alt="puppy">
+               <img class="img-responsive"  src="images/flying_in.jpg" width="50%" alt="puppy">
             </div>
 			<div class="col-md-6">
+               <img class="img-responsive"  src="images/jungle_1.jpg" width="50%" alt="puppy">
+            </div>
+
+         </section>
+      </article>
+	  
+	  	        <article class="row">
+         <section class="row">
+            <div class="col-md-6">
                <img class="img-responsive"  src="images/jungle_2.jpg" width="50%" alt="puppy">
+            </div>
+			<div class="col-md-6">
+               <img class="img-responsive"  src="images/pepper_chart.jpg" width="50%" alt="puppy">
             </div>
 
          </section>
