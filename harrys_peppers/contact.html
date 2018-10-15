@@ -9,19 +9,24 @@
       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="style.css">
    </head>
+   
    <body>
-      <div class="container">
-      <header class="row">
+   
+   <div class="container">
+      
+	  <header class="row">
          <div class="col-md-12 col-xs-12 text-center text-uppercase">
             <h1> Harry Rios</h1>
             <h4> Pepper Man</h4>
          </div>
       </header>
-      <div class="row">
+      
+	  <div class="row">
          <div class="col-md-12">
             <hr>
          </div>
       </div>
+      
       <article class="row">
          <div class="col-md-3 text-center">
             <p><a href="index.html">Home</a></p>
@@ -36,23 +41,32 @@
             <p><a href="mailto:bigwalruss@gmail.com?Subject=Peppers" method="post" enctype="text/plain">Contact Me</a></p>
          </div>
       </article>
-      <div class="row">
+	  
+	  <div class="row">
          <div class="col-md-12">
             <hr>
          </div>
       </div>
 
-      <article class="row">
-         <section class="row">
-            <div class="col-md-12">
-               <img class="img-responsive"  src="images/peppers.jpg" width="50%" alt="puppy">
-            </div>
-         </section>
-      </article>
-	           <article class="row">
-            <div class="col-md-12">
-               <p>Better Living Through Peppers</p>
-            </div>
-         </article>
-   </body>
+<div class="container">
+  <form action="action_page.php">
+
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+
+  </form>
+</div>
+
+  </body>
 </html>
+
