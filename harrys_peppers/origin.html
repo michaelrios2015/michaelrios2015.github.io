@@ -1,140 +1,130 @@
 <!doctype html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>Project 1: puppies</title>
-      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
-      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-      <link rel="stylesheet" type="text/css" href="style.css">
-	  <style>
-       /* Set the size of the div element that contains the map */
-      #map {
-        height: 400px;  /* The height is 400 pixels */
-        width: 100%;  /* The width is the width of the web page */
-       }
-    </style>
-   </head>
-   
-   <body>
-   
-   <div class="container">
-      <header class="row">
-         <div class="col-md-12 col-xs-12 text-center text-uppercase">
-            <h1> Harry Rios</h1>
-            <h4> Pepper Man</h4>
-         </div>
-      </header>
-	  
-      <div class="row">
-         <div class="col-md-12">
-            <hr>
-         </div>
-      </div>
-	  
-      <article class="row">
-        <div class="col-md-1 text-center">     
-         </div>
-		<div class="col-md-2 text-center">
-            <p><a href="index.html">Home</a></p>
-         </div>
-		<div class="col-md-2 text-center">
-            <p><a href="origin.html">Origin</a></p>
-         </div> 
-		<div class="col-md-2 text-center">
-            <p><a href="mission.html">Mission</a></p>
-         </div>
-         <div class="col-md-2 text-center">
-            <p><a href="recipes.html">Recipies</a></p>
-         </div>
-         <div class="col-md-3 text-center">
-            <p><a href="mailto:bigwalruss@gmail.com?Subject=Peppers" method="post" enctype="text/plain">Contact Me</a></p>
-         </div>
-	</article>
-	  
-      <div class="row">
-         <div class="col-md-12">
-            <hr>
-         </div>
-      </div>
 
-      <article class="row">
-         <section class="row">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Project 1: puppies</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="row">
+            <div class="col-md-12 col-xs-12 text-center text-uppercase">
+                <h1> Harry Rios</h1>
+                <h4> Pepper Man</h4>
+            </div>
+        </header>
+
+        <div class="row">
             <div class="col-md-12">
-             <h1>Our mission</h1>
-<p>To save the world one pepper at a time :)</p>
-         </section>
-      </article>
-	  	        <article class="row">
-         <section class="row">
-		  <div class="col-md-12">
-             
-<p>The origin</p>
-                     </section>
-      </article>
-	  
-	  
-	      <h3>Where the peppers come from</h3>
-    <!--The div element for the map -->
-    <div id="map"></div>
-    <script>
-// Initialize and add the map
-function initMap() {
-  // The location of Uluru
-  var uluru = {lat: -5.222165778, lng: -75.742163698};
-  // The map, centered at Uluru
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 5, center: uluru});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
-}
-    </script>
-    <!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function
-    -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCa5cSvLuzwwSeEN-EpgKERJp6mYKpOmog&callback=initMap" onerror="googleError()" async defer>
-            
-        </script>
-		
-		
-	        <article class="row">
-         <section class="row">
+                <hr>
+            </div>
+        </div>
+
+        <article class="row">
+            <div class="col-md-1 text-center">
+            </div>
+            <div class="col-md-2 text-center">
+                <h1><a href="index.html">Home</a></h1>
+            </div>
+            <div class="col-md-2 text-center">
+                <h1><a href="origin.html">Our Story</a></h1>
+            </div>
+            <div class="col-md-2 text-center">
+                <h1><a href="mission.html">Mission</a></h1>
+            </div>
+            <div class="col-md-2 text-center">
+                <h1><a href="recipes.html">Recipies</a></h1>
+            </div>
+            <div class="col-md-3 text-center">
+                <h1><a href="mailto:bigwalruss@gmail.com?Subject=Peppers" method="post" enctype="text/plain">Contact Me</a></h1>
+            </div>
+        </article>
+
+        <div class="row">
             <div class="col-md-12">
-
-			 </div>
-
-         </section>
-      </article>
-	        <article class="row">
-         <section class="row">
-            <div class="col-md-6">
-               <img class="img-responsive"  src="images/flying_in.jpg" width="50%" alt="puppy">
+                <hr>
             </div>
-			<div class="col-md-6">
-               <img class="img-responsive"  src="images/jungle_1.jpg" width="50%" alt="puppy">
-            </div>
+        </div>
 
-         </section>
-      </article>
-	  
-	  	        <article class="row">
-         <section class="row">
-            <div class="col-md-6">
-               <img class="img-responsive"  src="images/jungle_2.jpg" width="50%" alt="puppy">
-            </div>
-			<div class="col-md-6">
-               <img class="img-responsive"  src="images/pepper_chart.jpg" width="50%" alt="puppy">
-            </div>
+        <article class="row">
+            <section class="row">
+                <div class="col-md-12">
+                    <h1>Our Story</h1>
+                    <p>We found these peppers in the Loreto district of Peru. Starting in the town of Jaen, we traveled along roads adjacent rivers to multiple small communities. Although each town we visited was very different, we began to notice a trend, something they all had in common: hot sauce. Specifically, a vinegar based sauce made with round, orange peppers that we could not identify. We came to learn that these peppers we called “aji charapitas.” Before leaving the country, we were able to find seeds packaged adequately well enough so that we could take them home. When we returned, we immediately began to draft methods of growing them and reaching out to local restaurants who we thought would be interested in the peppers. Since, they have been incorporated in dishes served at a James Beard Foundation event featuring Peruvian food. </p>
+            </section>
 
-         </section>
-      </article>
+            <article class="row">
+                <section class="row">
+                    <div class="col-md-12">
 
+                        <p align="center">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4076717.8106665695!2d-77.18642147810512!3d-3.7732192347849036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91c14d60e710a1fb%3A0x5ddac915d1e32ef3!2sLoreto+Province%2C+Peru!5e0!3m2!1sen!2sus!4v1540512404079" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </p>
+                </section>
+            </article>
+            <article class="row">
 
+                <article class="row">
+                    <section class="row">
+                        <div class="col-md-12">
 
-	  
+                        </div>
 
-   </body>
+                    </section>
+                </article>
+                <article class="row">
+                    <section class="row">
+
+                        <div class="col-md-1"></div>
+
+                        <div class="col-md-3">
+
+                            <h1>Flying in</h1>
+
+                            <img class="img-responsive" src="images/flying_in.jpg" alt="puppy">
+                        </div>
+
+                        <div class="col-md-4"></div>
+
+                        <div class="col-md-3">
+                            <h1>The River</h1>
+                            <img class="img-responsive" src="images/jungle_1.jpg" alt="puppy">
+                        </div>
+                        <div class="col-md-1"></div>
+
+                    </section>
+                </article>
+
+            </article>
+            <article class="row">
+                <section class="row">
+
+                    <div class="col-md-1"></div>
+
+                    <div class="col-md-3">
+
+                        <h1>More River</h1>
+
+                        <img class="img-responsive" src="images/jungle_2.jpg" alt="puppy">
+                    </div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-3">
+                        <h1>Peppers</h1>
+                        <img class="img-responsive" src="images/pepper_chart.jpg" alt="puppy">
+
+                        <div class="col-md-1"></div>
+
+                </section>
+            </article>
+
+</body>
+
 </html>
