@@ -39,17 +39,20 @@
         <article class="row">
             <section class="row">
                 <div class="col-md-12">
-        
-		<p><b>2008</b> <br>
+<p ></p>
+
+
+
+		<p ><b>2008</b> <br>
+		
+
 
 Spring
-<ul>
-	<li>	Prague </li>
-	<li>	Slovakia </li>
-	<li>	Hungry </li>
+<ul id="spring08" >
+
 </ul>
 Fall
-<ul>
+<ul id="fall08">
 <li>Vietnam </li>
 <li>Laos </li>
 <li>Cambodia (Angkor Wat) 1 day  </li> 
@@ -58,7 +61,7 @@ Fall
 <p><b>2009</b> <br>
 
 Fall
-<ul>
+<ul id="fall09">
 <li>Namibia</li>
 <li>Botswana</li>
 <li>Zambia</li>
@@ -76,7 +79,7 @@ Spring
 <li>Russia</li>
 </ul>
 Summer
-<ul>
+<ul id="summer10">
 <li>Ecuador/Peru (Galapagos)</li>
 <li>India</li>
 <li>Fall</li>
@@ -89,7 +92,7 @@ Summer
 </p>
 <p>2011 <br>
 <ul>
-<li>Spring</li>
+<li>Spring id="spring11"</li>
 <li>5 Stans</li>
 <li>Italy</li>
 <li>Fall</li>
@@ -101,7 +104,7 @@ Summer
 <p>2012 <br>
 
 Fall
-<ul>
+<ul id="fall12">
 <li>Croatia, etc</li>
 <li>Romania</li>
 <li>Summer</li>
@@ -114,7 +117,7 @@ Fall
 <p>2013 <br>
 
 Winter/Spring
-<ul>
+<ul id="winter13">
 <li>Thailand</li>
 <li>Sri Lanka</li>
 <li>Malaysia</li>
@@ -128,7 +131,7 @@ Winter/Spring
 </p>
 <p>2014 <br>
 Winter
-<ul>
+<ul id="winter14">
 <li>Bangladesh</li>
 <li>India</li>
 <li>Summer/Fall</li>
@@ -138,7 +141,7 @@ Fall
 </ul>
 </p>
 <p>2015
-<ul>
+<ul id="2015">
 <li>Eastern Turkey</li>
 <li>China Silk Road</li>
 <li>Papau New Guinea</li>
@@ -146,12 +149,7 @@ Fall
 </ul>
 </p>
 <p>2016
-<ul>
-<li>Philippians </li>
-<li>Iran</li> 
-<li>Jordan</li>
-<li>India June-August </li>
-<li>Panama</li>
+<ul id="2016">
 </p>
 </ul>
 <p>2017 <br>
@@ -294,7 +292,28 @@ Middle east
                 </div>
             </section>
         </article>
-        
+   
+		<script>
+var spring08 = ["Prague", "Slovakia", "Hungry"];
+
+var Y2016 = ["Philippians", "Iran", "Jordan", 
+"India June-August", "Panama"];
+
+function listCountries (countries){
+var text = "";
+var i;
+for (i = 0; i < countries.length; i++) {
+  text += "<li>" + countries[i] + "</li>";
+}
+
+return text;
+}
+document.getElementById("spring08").innerHTML = listCountries(spring08);
+document.getElementById("2016").innerHTML = listCountries(Y2016);
+</script>
+
+
+   
 </body>
 
 </html>
