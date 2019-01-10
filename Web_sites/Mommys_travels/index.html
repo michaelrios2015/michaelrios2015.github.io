@@ -38,7 +38,7 @@
 
         <article class="row">
             <section class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" class="col-xs-12">
 <p ></p>
 
 
@@ -91,8 +91,8 @@ Summer
 </ul>
 </p>
 <p>2011 <br>
-<ul>
-<li>Spring id="spring11"</li>
+<ul  id="spring11">
+<li>Spring</li>
 <li>5 Stans</li>
 <li>Italy</li>
 <li>Fall</li>
@@ -142,10 +142,7 @@ Fall
 </p>
 <p>2015
 <ul id="2015">
-<li>Eastern Turkey</li>
-<li>China Silk Road</li>
-<li>Papau New Guinea</li>
-<li>India (Raj & Gujarat)</li>
+
 </ul>
 </p>
 <p>2016
@@ -299,6 +296,8 @@ var spring08 = ["Prague", "Slovakia", "Hungry"];
 var Y2016 = ["Philippians", "Iran", "Jordan", 
 "India June-August", "Panama"];
 
+var Y2015 = ["Eastern Turkey", "China Silk Road", "Papau New Guinea", "India (Raj & Gujarat)"];
+
 function listCountries (countries){
 var text = "";
 var i;
@@ -309,6 +308,7 @@ for (i = 0; i < countries.length; i++) {
 return text;
 }
 document.getElementById("spring08").innerHTML = listCountries(spring08);
+document.getElementById("2015").innerHTML = listCountries(Y2015);
 document.getElementById("2016").innerHTML = listCountries(Y2016);
 </script>
 
