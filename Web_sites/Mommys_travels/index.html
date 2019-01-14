@@ -62,13 +62,6 @@ Fall
 
 Fall
 <ul id="fall09">
-<li>Namibia</li>
-<li>Botswana</li>
-<li>Zambia</li>
-<li>Winter</li>
-<li>Buthan</li>
-<li>India</li>
-<li>Nepal</li>
 </ul>
 </p>
 
@@ -85,11 +78,6 @@ Summer
 </ul>
 Fall
 <ul id="fall10">
-<li>Thailand</li>
-<li>Laos</li>
-<li>China</li>
-<li>Winter</li>
-<li>Ethiopia</li>
 </ul>
 </p>
 <p>2011 <br>
@@ -97,7 +85,9 @@ Fall
 <li>Spring</li>
 <li>5 Stans</li>
 <li>Italy</li>
-<li>Fall</li>
+</ul>
+Fall
+<ul>
 <li>Indonesia</li>
 <li>Winter</li>
 <li>Mali/ Burkina Faso</li>
@@ -107,26 +97,15 @@ Fall
 
 Fall
 <ul id="fall12">
-<li>Croatia, etc</li>
-<li>Romania</li>
-<li>Summer</li>
-<li>Mongolia</li>
-<li>Winter</li>
-<li>Myanmar</li>
-<li>South India</li>
 </ul>
 </p>
 <p>2013 <br>
 
 Winter/Spring
 <ul id="winter13">
-<li>Thailand</li>
-<li>Sri Lanka</li>
-<li>Malaysia</li>
-<li>Borneo</li>
-<li>Summer</li>
-<li>Uganda</li>
-<li>Fall</li>
+</ul>
+Fall
+<ul>
 <li>West Africa</li>
 <li>Madagascar</li>
 </ul>
@@ -136,15 +115,17 @@ Winter
 <ul id="winter14">
 <li>Bangladesh</li>
 <li>India</li>
-<li>Summer/Fall</li>
+Summer/Fall
+<ul>
 <li>Silk Road</li>
+</ul>
 Fall
+<ul>
 <li>India</li>
 </ul>
 </p>
 <p>2015
 <ul id="2015">
-
 </ul>
 </p>
 <p>2016
@@ -295,8 +276,15 @@ Middle east
 		<script>
 var spring08 = ["Prague", "Slovakia", "Hungry"];
 
-var Y2016 = ["Philippians", "Iran", "Jordan", 
-"India June-August", "Panama"];
+var fall09 = ["Namibia", "Botswana", "Zambia", "Winter", "Buthan", "India", "Nepal"];
+
+var fall10 = ["Thailand", "Laos", "China", "Winter", "Ethiopia"];
+
+var fall12 = ["Croatia, etc", "Romania", "Summer", "Mongolia", "Winter", "Myanmar", "South India"];
+
+var winter13 = ["Thailand", "Sri Lanka", "Malaysia", "Borneo", "Summer", "Uganda"]
+
+var Y2016 = ["Philippians", "Iran", "Jordan", "India June-August", "Panama"];
 
 var Y2015 = ["Eastern Turkey", "China Silk Road", "Papau New Guinea", "India (Raj & Gujarat)"];
 
@@ -310,6 +298,13 @@ for (i = 0; i < countries.length; i++) {
 return text;
 }
 document.getElementById("spring08").innerHTML = listCountries(spring08);
+document.getElementById("fall09").innerHTML = listCountries(fall09);
+document.getElementById("fall10").innerHTML = listCountries(fall10);
+
+document.getElementById("fall12").innerHTML = listCountries(fall12);
+
+document.getElementById("winter13").innerHTML = listCountries(winter13);
+
 document.getElementById("2015").innerHTML = listCountries(Y2015);
 document.getElementById("2016").innerHTML = listCountries(Y2016);
 </script>
