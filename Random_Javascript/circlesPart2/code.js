@@ -5,8 +5,8 @@ var animate = window.requestAnimationFrame;
 var canvas = document.createElement("canvas");
 canvas.id = 'cID';
 console.log(canvas);
-var width = 400;
-var height = 400;
+var width = window.innerWidth;
+var height = window.innerHeight;
 canvas.width = width;
 canvas.height = height;
 
