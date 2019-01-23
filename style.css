@@ -7,9 +7,10 @@ hr {
 }
 
 section {
-    margin-bottom: 2em;
+    font-size: 1.5em;
 }
 
+/*
 article p:first-child {
     margin-left: .5em;
     font-size: 2.5em;
@@ -20,7 +21,7 @@ article p {
     color: #747704;
     margin-bottom: 0px;
 }
-
+*/
 #cat {
     margin-top: 1em;
 }
@@ -37,6 +38,7 @@ article p {
 
 .project {
     text-align: center;
+    font-size: 1.5em;
 }
 
 

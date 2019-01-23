@@ -7,78 +7,79 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Project 1: puppies</title>
+    <title>Michael's website, it's outta sight</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="Project_1_generic_website/style.css" />
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
     <!-- BODY -->
-    <!-- Double check what container is  -->
+    <!-- Container is always needed in bootstrap  -->
     <div class="container">
-      <header class="row">
-        <div class="col-md-6 col-sm-6 col-xs-12">
-        <img id="cat" class="img-responsive img-circle" src="Project_1_generic_website/images/cat-small.jpg" alt="cat" /> 
-        <!-- think I am supposed to have multiple sizes of phots for different screens  -->
-		</div>
-        <div class="col-md-6 col-sm-6 col-xs-12 title">
-          <h1>Michael Rios</h1>
-          <h4>A person, maybe</h4>
+      <header>
+        <!-- logo  -->
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <img id="cat" class="img-responsive img-circle" src="images/cat-small.jpg" alt="sad cat" /> 
+            <!-- think I am supposed to have multiple sizes of phots for different screens  -->
+		      </div>
+          <!-- Me  -->
+          <div class="col-md-6 col-sm-6 col-xs-12 title">
+            <h1>Michael Rios</h1>
+            <h4>Web Guy, like Spiderman??</h4>
+          </div>
         </div>
+        <!-- LINE -->
+        <div class="row">
+          <div class="col-md-12">
+            <hr />
+          </div>
+        </div>
+
       </header>
-      <!-- LINE -->
+      <!-- PROJECTS line 1-->
       <div class="row">
-        <div class="col-md-12">
-          <hr />
-        </div>
-      </div>
-      <article class="row">
-        <!-- Double check what article is -->
-        <div class="col-md-12">
-          <p>Random Projects:</p>
-        </div>
-      </article>
-      <!-- PROJECTS -->
-      <!-- put c++, Java, web projects in different folders   -->
-      <article>
-        <div class="row">
-          <div class="col-md-4 col-sm-6 project">
-          <img class="img-responsive" src="Project_1_generic_website/images/nypl.jpg" alt="puppy" /> 
+        <section class="col-md-4 col-sm-6 col-xs-12">
+          <img class="img-responsive" src="images/nypl.jpg" alt="puppy" /> 
           <a href="cpp_projects/index.html">
-            <p>C++ Projects</p>
-          </a></div>
-          <div class="col-md-4 col-sm-6 project">
-          <img class="img-responsive" src="Project_1_generic_website/images/nyplGreen.jpg" alt="puppy" /> 
+          <h3 class="project">C++ Projects</h3>
+          </a>
+        </section>
+        <section class="col-md-4 col-sm-6 col-xs-12">
+          <img class="img-responsive" src="images/nyplGreen.jpg" alt="puppy" /> 
           <a href="java_projects/index.html">
-            <p>Java Projects</p>
-          </a></div>
-          <div class="col-md-4 col-sm-6 project">
-          <img class="img-responsive" src="Project_1_generic_website/images/nyplPurple.jpg" alt="puppy" /> 
+          <h3 class="project">Java Projects</h3>
+          </a>
+        </section>
+        <section class="col-md-4 col-sm-6 col-xs-12">
+          <img class="img-responsive" src="images/nyplPurple.jpg" alt="puppy" /> 
           <a href="FEND/index.html">
-            <p>FEND</p>
-          </a></div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 col-sm-6 project">
-          <img class="img-responsive" src="Project_1_generic_website/images/nyplPurple.jpg" alt="puppy" /> 
+          <h3 class="project">FEND</h3>
+          </a>
+        </section>
+      </div>
+      <!-- PROJECTS line 2-->
+      <div class="row">
+        <section class="project col-md-4 col-sm-6 col-xs-12">
+          <img class="img-responsive" src="images/nyplPurple.jpg" alt="puppy" /> 
           <a href="Random_Javascript/index.html">
-            <p>Web Animation</p>
-          </a></div>
-          <div class="col-md-4 col-sm-6 project">
-          <img class="img-responsive" src="Project_1_generic_website/images/nyplPurple.jpg" alt="puppy" /> 
+          <h3 class="project">Web Animation</h3>
+          </a>
+        </section>
+        <section class="project col-md-4 col-sm-6 col-xs-12">
+          <img class="img-responsive" src="images/nyplPurple.jpg" alt="puppy" /> 
           <a href="Android_Basics/index.html">
-              <p>Android Basics</p>
-            </a></div>
-          <div class="col-md-4 col-sm-6 project">
-          <img class="img-responsive" src="Project_1_generic_website/images/nyplPurple.jpg" alt="puppy" /> 
+          <h3 class="project">Android Basics</h3>
+          </a>
+        </section>
+        <section class="project col-md-4 col-sm-6 col-xs-12">
+          <img class="img-responsive" src="images/nyplPurple.jpg" alt="puppy" /> 
           <a href="Web_sites/index.html">
-              <p>Websites</p>
-            </a>
-          </div></div>
-        </div>
-      </article>
+          <h3 class="project">Websites</h3>
+          </a>
+        </section>
+      </div>
     </div>
   </body>
 </html>
