@@ -102,14 +102,14 @@ var projects = { //array of objects with
             "title": "Hangman C++",
             "dates": "2014",
             "description": "Made hangman with C++",
-            "images": ["../Project_1_generic_website/images/cat-smaller.jpg", "../Project_1_generic_website/images/cat-smaller.jpg"]
+            "images": ["../Project_1_generic_website/images/cat-smaller.jpg"]
 
         },
 		{
             "title": "Poker C++",
             "dates": "2014",
             "description": "Poker made with C++",
-            "images": ["../Project_1_generic_website/images/cat-smaller.jpg", "../Project_1_generic_website/images/cat-smaller.jpg"]
+            "images": ["../Project_1_generic_website/images/cat-smaller.jpg"]
         }		 				 
     ]
 }
