@@ -170,12 +170,14 @@ var education = {
             "title": "FEND",
             "school": "Udacity",
             "date": 2016,
+            "classUrl": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001",
             "url": "http://www.udacity.com"
         },
         { //array with ?????? this maybe wrong
-            "title": "FEND",
+            "title": "Android Basics by Google Nanodegree Program",
             "school": "Udacity",
-            "date": 2016,
+            "date": 2018,
+            "classUrl": "https://www.udacity.com/course/android-basics-nanodegree-by-google--nd803",
             "url": "http://www.udacity.com"
         }              
     ]
@@ -218,16 +220,18 @@ education.display = function() {
 
     for (online in education.onlineCourses) {
         $("#education").append(HTMLschoolStart);
+        var formattedTitleUrl = HTMLonlineTitleUrl.replace("%data%", education.onlineCourses[online].classUrl);
         var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[online].title);
         var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[online].school);
-        var formattedSchoolTitle = formattedTitle + formattedSchool;
+        var formattedSchoolTitle = formattedTitleUrl + formattedTitle + formattedSchool;
         var formattedDate = HTMLonlineDates.replace("%data%", education.onlineCourses[online].date);
         var formattedUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[online].url);
 
         $(".education-entry:last").append(formattedSchoolTitle);
         $(".education-entry:last").append(formattedDate);
-        $(".education-entry:last").append(formattedUrl);
-        $(".education-entry:last a").attr('href', education.onlineCourses[online].url );
+        $(".education-entry:last").append("<br>");
+        //$(".education-entry:last").append(formattedUrl);
+        //$(".education-entry:last a").attr('href', education.onlineCourses[online].url );
     }
 }
 
