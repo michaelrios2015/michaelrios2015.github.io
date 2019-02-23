@@ -57,12 +57,14 @@ var work = {
             "title": "Librarian",
             "location": "Bronx, NY",
             "dates": "2014-2016",
+            "url": "https://www.NYPL.org",
             "description": "Helping the people"
         }, {
             "employer": "Enoch Pratt Free Library",
             "title": "Librarian",
             "location": "Baltimore, MD",
             "dates": "2003-2014",
+            "url": "https://www.prattlibrary.org",
             "description": "Helping people in Baltimore"
         },
 
@@ -75,9 +77,10 @@ work.display = function() {
 
         $("#workExperience").append(HTMLworkStart);
 
+        var formattedEmployerUrl = HTMLworkEmployerUrl.replace("%data%", work.jobs[job].url);    
         var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
         var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-        var formattedEmployerTitle = formattedEmployer + formattedTitle;
+        var formattedEmployerTitle = formattedEmployerUrl + formattedEmployer + formattedTitle;
         var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
 		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
@@ -224,7 +227,7 @@ education.display = function() {
         $(".education-entry:last").append(formattedSchoolTitle);
         $(".education-entry:last").append(formattedDate);
         $(".education-entry:last").append(formattedUrl);
-                $(".education-entry:last a").attr('href', education.onlineCourses[online].url );
+        $(".education-entry:last a").attr('href', education.onlineCourses[online].url );
     }
 }
 
