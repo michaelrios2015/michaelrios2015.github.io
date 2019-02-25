@@ -2,7 +2,7 @@
 
 var bio = {
     "name": "Mike Rios",
-    "role": "Computery GUY or possibly gal",
+    "role": "Computery GUY/GAL",
     "contacts": {
         "mobile": "443-602-6012",
         "email": "michael.rios093@gmail.com",
@@ -102,16 +102,18 @@ work.display();
 
 var projects = { //array of objects with
     "projects": [{
-            "title": "Hangman C++",
+            "title": "Hangman",
             "dates": "2014",
             "description": "Made hangman with C++",
+            "url": "https://github.com/michaelrios2015/Hangman-Project-5",
             "images": ["../Project_1_generic_website/images/cat-smaller.jpg"]
 
         },
 		{
-            "title": "Poker C++",
+            "title": "Poker",
             "dates": "2014",
-            "description": "Poker made with C++",
+            "description": "Poker made with Java",
+            "url": "https://github.com/michaelrios2015/Poker",
             "images": ["../Project_1_generic_website/images/cat-smaller.jpg"]
         }		 				 
     ]
@@ -131,6 +133,7 @@ projects.display = function() {
         $(".project-entry:last").append(formattedTitle);
         $(".project-entry:last").append(formattedDates);
         $(".project-entry:last").append(formattedDescription);
+        $(".project-entry:last a").attr('href', projects.projects[project].url)
 
         for (image in projects.projects[project].images) {
 
