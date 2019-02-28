@@ -54,13 +54,15 @@ Spring
 <ul id="spring08" >
 
 </ul>
-</div>
+
+
+<!-- </div>
      <div class="col-md-6" class="col-xs-6">
 	 
 	 <iframe class="embed-responsive-item" src="https://www.google.com/maps/d/embed?mid=12XyWFbmvTzVS3GqzLN4xKQ8fNsx3LrCa&hl=en" width="320" height="240"></iframe>
 	 
 
-</div>
+</div> -->
 	 
 </div>	 
 
@@ -75,6 +77,7 @@ Fall
 <li>Cambodia (Angkor Wat) 1 day  </li> 
 </ul>
 </p>
+
 <p><b>2009</b> <br>
 
 Fall
@@ -291,6 +294,118 @@ Middle east
         </article>
    
 		<script>
+
+//should be able to put all travels in json and loop through it :)
+var travels = { //array of objects with
+    "travels": [{
+            "year": "2008",
+            "winter": [],
+            "spring": ["Prague", "Slovakia", "Hungry"],
+            "summer": [],
+            "fall": ["Vietnam", "Laos", "Cambodia (Angkor Wat) 1 day"]
+        },
+        {
+            "year": "2009",
+            
+            "winter": [],
+            "spring": [],
+            "summer": [],
+            "fall": ["Namibia", "Botswana", "Zambia", "Winter", "Buthan", "India", "Nepal"]
+        },
+        {
+            "year": "2010",
+            
+            "winter": [],
+            "spring": ["Russia"],
+            "summer": ["Ecuador/Peru (Galapagos)", "India"],
+            "fall": []
+        },
+        {
+            "year": "2011",
+            
+            "winter": ["Mali/Burkina Faso"],
+            "spring": ["5 Stans</li>", "Italy"],
+            "summer": [],
+            "fall": ["Indonesia"]
+        },
+                {
+            "year": "2012",
+            
+            "winter": [""],
+            "spring": [],
+            "summer": [],
+            "fall": ["Croatia, etc", "Romania", "Summer", "Mongolia", "Winter", "Myanmar", "South India"]
+        },               
+                {
+            "year": "2013",
+            
+            "winter": ["Thailand", "Sri Lanka", "Malaysia", "Borneo"],
+            "spring": [],
+            "summer": ["Uganda"],
+            "fall": ["West Africa", "Madagascar"]
+        }, 
+                        {
+            "year": "2014",
+            
+            "winter": ["Bangladesh", "India"],
+            "spring": [],
+            "summer": ["Silk Road"],
+            "fall": ["India"]
+        }, 
+                        {
+            "year": "2015",
+            
+            "winter": [],
+            "spring": ["Eastern Turkey", "China Silk Road", "Papau New Guinea", "India (Raj & Gujarat)"],
+            "summer": [],
+            "fall": []
+        }, 
+                        {
+            "year": "2016",
+            
+            "winter": [],
+            "spring": ["Philippians", "Iran", "Jordan", "India June-August", "Panama"],
+            "summer": [],
+            "fall": []
+        }, 
+    ]
+}
+
+for (travel in travels.travels) {
+    console.log(travels.travels[travel].year + "\n");
+
+
+if (travels.travels[travel].winter.length > 0){
+console.log("Winter");
+    for (place in travels.travels[travel].winter) {
+        
+    console.log(travels.travels[travel].winter[place]);
+
+    }}
+
+console.log("Spring");
+    for (place in travels.travels[travel].spring) {
+    
+    console.log(travels.travels[travel].spring[place]);
+
+}
+
+console.log("summer");
+for (place in travels.travels[travel].summer) {
+    
+    console.log(travels.travels[travel].summer[place]);
+
+}
+
+console.log("fall");
+for (place in travels.travels[travel].fall) {
+    
+    console.log(travels.travels[travel].fall[place]);
+
+}
+
+}
+
 var spring08 = ["Prague", "Slovakia", "Hungry"];
 
 var fall09 = ["Namibia", "Botswana", "Zambia", "Winter", "Buthan", "India", "Nepal"];
