@@ -40,7 +40,7 @@
         <article class="row">
             <section class="row">
                 <div class="col-md-12" class="col-xs-12" id="travel">
-
+</div>
 
 <!-- 
 
@@ -182,7 +182,7 @@ Fall
 </p>
 
 -->
-
+<div>
 <p>Countries</p>
 
 <p>Americas:
@@ -381,13 +381,12 @@ $("#travel").append("<b>" + travels.travels[travel].year + "</b> <br>");
 
 
 if (travels.travels[travel].winter.length > 0){
-$("#travel").append("Winter <br>");
+$("#travel").append("Winter " + "<br>");
     for (place in travels.travels[travel].winter) {
         
-    $("#travel").append("<ul> <li>" + travels.travels[travel].winter[place] + "</li> </ul>");
+    $("#travel").append("<li>" + travels.travels[travel].winter[place] + "</li>");
 
     }
-
 	}
 if (travels.travels[travel].spring.length > 0){
 
@@ -401,7 +400,7 @@ $("#travel").append("Spring <br> ");
 
 if (travels.travels[travel].summer.length > 0){
 
-$("#travel").append("summer <br>");
+$("#travel").append("Summer <br>");
 for (place in travels.travels[travel].summer) {
     
     $("#travel").append("<li>" + travels.travels[travel].summer[place] + "</li>");
@@ -411,14 +410,16 @@ for (place in travels.travels[travel].summer) {
 
 if (travels.travels[travel].fall.length > 0){
 
-$("#travel").append("fall <br>");
+$("#travel").append("Fall <br>");
 for (place in travels.travels[travel].fall) {
     
     $("#travel").append("<li>" + travels.travels[travel].fall[place] + "</li>");
 
 }
 }
+$("#travel").append("<hr>");
 }
+
 /*
 var spring08 = ["Prague", "Slovakia", "Hungry"];
 
