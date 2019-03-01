@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Project 1: puppies</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -38,10 +39,10 @@
 
         <article class="row">
             <section class="row">
-                <div class="col-md-12" class="col-xs-12">
+                <div class="col-md-12" class="col-xs-12" id="travel">
 
 
-
+<!-- 
 
 		<p ><b>2008</b> </p>
 		
@@ -56,20 +57,22 @@ Spring
 </ul>
 
 
-<!-- </div>
+</div>
      <div class="col-md-6" class="col-xs-6">
 	 
 	 <iframe class="embed-responsive-item" src="https://www.google.com/maps/d/embed?mid=12XyWFbmvTzVS3GqzLN4xKQ8fNsx3LrCa&hl=en" width="320" height="240"></iframe>
 	 
 
-</div> -->
+</div> 
 	 
 </div>	 
 
  <div class="row">
 
-              <div class="col-md-12" class="col-xs-12">
+              <div class="col-md-12" class="col-xs-12" >
 
+			  
+		  
 Fall
 <ul id="fall08">
 <li>Vietnam </li>
@@ -178,7 +181,7 @@ Fall
 </ul>
 </p>
 
-
+-->
 
 <p>Countries</p>
 
@@ -293,7 +296,8 @@ Middle east
             </section>
         </article>
    
-		<script>
+
+<script>
 
 //should be able to put all travels in json and loop through it :)
 var travels = { //array of objects with
@@ -324,14 +328,14 @@ var travels = { //array of objects with
             "year": "2011",
             
             "winter": ["Mali/Burkina Faso"],
-            "spring": ["5 Stans</li>", "Italy"],
+            "spring": ["5 Stans", "Italy"],
             "summer": [],
             "fall": ["Indonesia"]
         },
                 {
             "year": "2012",
             
-            "winter": [""],
+            "winter": [],
             "spring": [],
             "summer": [],
             "fall": ["Croatia, etc", "Romania", "Summer", "Mongolia", "Winter", "Myanmar", "South India"]
@@ -372,40 +376,50 @@ var travels = { //array of objects with
 }
 
 for (travel in travels.travels) {
-    console.log(travels.travels[travel].year + "\n");
+
+$("#travel").append("<b>" + travels.travels[travel].year + "</b> <br>");
 
 
 if (travels.travels[travel].winter.length > 0){
-console.log("Winter");
+$("#travel").append("Winter <br>");
     for (place in travels.travels[travel].winter) {
         
-    console.log(travels.travels[travel].winter[place]);
+    $("#travel").append("<ul> <li>" + travels.travels[travel].winter[place] + "</li> </ul>");
 
-    }}
+    }
 
-console.log("Spring");
+	}
+if (travels.travels[travel].spring.length > 0){
+
+$("#travel").append("Spring <br> ");
     for (place in travels.travels[travel].spring) {
     
-    console.log(travels.travels[travel].spring[place]);
+    $("#travel").append("<li>" + travels.travels[travel].spring[place] + "</li>");
 
 }
+}
 
-console.log("summer");
+if (travels.travels[travel].summer.length > 0){
+
+$("#travel").append("summer <br>");
 for (place in travels.travels[travel].summer) {
     
-    console.log(travels.travels[travel].summer[place]);
+    $("#travel").append("<li>" + travels.travels[travel].summer[place] + "</li>");
 
 }
+}
 
-console.log("fall");
+if (travels.travels[travel].fall.length > 0){
+
+$("#travel").append("fall <br>");
 for (place in travels.travels[travel].fall) {
     
-    console.log(travels.travels[travel].fall[place]);
+    $("#travel").append("<li>" + travels.travels[travel].fall[place] + "</li>");
 
 }
-
 }
-
+}
+/*
 var spring08 = ["Prague", "Slovakia", "Hungry"];
 
 var fall09 = ["Namibia", "Botswana", "Zambia", "Winter", "Buthan", "India", "Nepal"];
@@ -439,6 +453,8 @@ document.getElementById("winter13").innerHTML = listCountries(winter13);
 
 document.getElementById("2015").innerHTML = listCountries(Y2015);
 document.getElementById("2016").innerHTML = listCountries(Y2016);
+*/
+
 </script>
 
 
