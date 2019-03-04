@@ -13,7 +13,7 @@ var bio = {
 
     "welcomeMessage": "Greetings Earthlings",
     "skills": ["HTML", "CSS", "Javascript", "Java", "C++", "Nice guy"],
-    "biopic": "../Project_1_generic_website/images/cat-smaller.jpg"
+    "biopic": "images/cat-smaller.jpg"
 }
 
 //Display Biography
@@ -106,7 +106,7 @@ var projects = { //array of objects with
             "dates": "2014",
             "description": "Made hangman with C++",
             "url": "https://github.com/michaelrios2015/Hangman-Project-5",
-            "images": ["../Project_1_generic_website/images/cat-smaller.jpg"]
+            "images": ["images/cat-smaller.jpg"]
 
         },
 		{
@@ -114,7 +114,7 @@ var projects = { //array of objects with
             "dates": "2014",
             "description": "Poker made with Java",
             "url": "https://github.com/michaelrios2015/Poker",
-            "images": ["../Project_1_generic_website/images/cat-smaller.jpg"]
+            "images": ["images/cat-smaller.jpg"]
         }		 				 
     ]
 }
