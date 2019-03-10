@@ -212,7 +212,7 @@ var ViewModel = function() {
         };
 
         map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 11,
+                zoom: 0,
                 center: myLatLng
             });
 
