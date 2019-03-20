@@ -7,7 +7,7 @@ var bio = {
         "mobile": "443-602-6012",
         "email": "michael.rios093@gmail.com",
         "github": "https://github.com/michaelrios2015",
-        "twitter": "not here",
+        "instgram": "michael_rios2001",
         "location": "News York, NY"
     },
 
@@ -24,10 +24,11 @@ bio.display = function() {
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
     var formattedHTMLmobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var formattedHTMLemail = HTMLemail.replace("%data%", bio.contacts.email);
-    var formattedHTMLtwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+    var formattedHTMLinstagram = HTMLinstgram.replace("%data%", bio.contacts.instgram);
     var formattedHTMLgithub = HTMLgithub.replace("%data%", bio.contacts.github);
-    var formattedHTMLlocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    var formattedHTMLcontactGeneric = formattedHTMLmobile + formattedHTMLemail + formattedHTMLgithub + formattedHTMLtwitter + formattedHTMLlocation;
+    formattedHTMLgithub = formattedHTMLgithub.replace("%data%", bio.contacts.github);
+	var formattedHTMLlocation = HTMLlocation.replace("%data%", bio.contacts.location);
+    var formattedHTMLcontactGeneric = formattedHTMLmobile + formattedHTMLemail + formattedHTMLgithub + formattedHTMLinstagram + formattedHTMLlocation;
 	var formattedHTMLbioPic = HTMLbioPic.replace("%data%", bio.biopic);
     var formattedHTMLwelcome = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
 
