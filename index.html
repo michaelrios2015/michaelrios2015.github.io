@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Michael's website, it's outta sight</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
 
     <link rel="stylesheet" type="text/css" href="style.css" />
@@ -37,49 +38,81 @@
           </div>
         </div>
 
-      </header>
-      <!-- PROJECTS line 1-->
-      <div class="row">
-        <section class="col-md-4 col-sm-6 col-xs-12">
-          <img class="img-responsive" src="images/nypl.jpg" alt="puppy" /> 
-          <a href="cpp_projects/index.html">
-          <h3 class="project">C++ Projects</h3>
-          </a>
-        </section>
-        <section class="col-md-4 col-sm-6 col-xs-12">
-          <img class="img-responsive" src="images/nyplGreen.jpg" alt="puppy" /> 
-          <a href="java_projects/index.html">
-          <h3 class="project">Java Projects</h3>
-          </a>
-        </section>
-        <section class="col-md-4 col-sm-6 col-xs-12">
-          <img class="img-responsive" src="images/nyplPurple.jpg" alt="puppy" /> 
-          <a href="FEND/index.html">
-          <h3 class="project">FEND</h3>
-          </a>
-        </section>
+      </header >
+      <!-- PROJECTS line 1 now populated with javasipt-->
+      <div id = "content">    
       </div>
-      <!-- PROJECTS line 2-->
-      <div class="row">
-        <section class="project col-md-4 col-sm-6 col-xs-12">
-          <img class="img-responsive" src="images/nyplPurple.jpg" alt="puppy" /> 
-          <a href="Random_Javascript/index.html">
-          <h3 class="project">Web Animation</h3>
-          </a>
-        </section>
-        <section class="project col-md-4 col-sm-6 col-xs-12">
-          <img class="img-responsive" src="images/nyplPurple.jpg" alt="puppy" /> 
-          <a href="Android_Basics/index.html">
-          <h3 class="project">Android Basics</h3>
-          </a>
-        </section>
-        <section class="project col-md-4 col-sm-6 col-xs-12">
-          <img class="img-responsive" src="images/nyplPurple.jpg" alt="puppy" /> 
-          <a href="Web_sites/index.html">
-          <h3 class="project">Websites</h3>
-          </a>
-        </section>
-      </div>
+
     </div>
   </body>
+<script>
+  var projects = [
+        {
+        name: "FEND",
+        link: "FEND/index.html"
+    },
+	{
+        name: "C++ Projects",
+        link: "cpp_projects/index.html"
+    },
+    {
+        name: "Java Projects",
+        link: "java_projects/index.html"
+    },
+    {
+        name: "Web Animation",
+        link: "Random_Javascript/index.html"
+    },
+    {
+        name: "Android Basics",
+        link: "Android_Basics/index.html"
+    },
+    {
+        name: "Websites",
+        link: "Web_sites/index.html"
+    }
+
+];
+
+var length = projects.length;
+
+
+var html = ""; //declaring string
+
+
+//make this is a function so I can re-use it??
+
+function displayContent (Content){
+for (var j = 0; j < length / 3; j++) { // we only want three project per row 
+
+    html += '<div class="row">';//building string
+
+
+	
+    for (var i = (j * 3); i < 3 + (j * 3); i++) { // each row has three projects
+        console.log(j);
+        console.log(i);
+        html += '<section class="col-md-4 col-sm-6 col-xs-12">' +
+            '<img class="img-responsive" src="images/nyplPurple.jpg" alt="puppy" />' +
+            '<a href=' + projects[i].link + '>' +
+            '<h3 class="project">' + projects[i].name + '</h3>' +
+            '</section>';
+
+    }
+
+    html += '</div>';
+
+}
+
+// append string to div
+$("#content").append(html);
+}
+displayContent(projects);
+
+console.log(projects);
+
+
+
+</script>
+  
 </html>

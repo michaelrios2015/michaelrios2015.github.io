@@ -9,7 +9,8 @@
     <title>C++ Projects</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="../style.css" />
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../style.css" />
 </head>
 
 <body>
@@ -20,96 +21,95 @@
                 <h4><a href="https://udacity.com">Udacity</a></h4>
             </div>
         </header>
-        <div class="row">
-            <div class="col-md-12">
-                <hr />
-            </div>
-        </div>
-        <section class="row">
-            <div class="col-md-12">
-                <p>
-                    <a href="https://github.com/michaelrios2015/BadArt-Project-1">Project 1: Single page App</a>
-                </p>
-                <p>very first app, it's just a simple single page app designed to get us started</p>
-            </div>
-        </section>
-        <div class="row">
-            <div class="col-md-12">
-                <hr />
-            </div>
-        </div>
-        <section class="row">
-            <div class="col-md-12">
-                <p>
-                    <a href="https://github.com/michaelrios2015/WrestlingCounter-Project-2">Project 2: Wrestling Counter</a>
-                </p>
-                <p>Project Submission Design and implement an app to track scores between two teams playing a game. So that we can learn how to get user input and manipulate data</p>
-            </div>
-        </section>
-        <div class="row">
-            <div class="col-md-12">
-                <hr />
-            </div>
-        </div>
-        <section class="row">
-            <div class="col-md-12">
-                <p>
-                    <a href="https://github.com/michaelrios2015/Quiz-Project-3">Project 3: Quiz</a>
-                </p>
-                <p>Design and implement a short quiz app about some topic you are familiar with.  They mostly wanted to teach us about conditional statements</p>
-            </div>
-        </section>
-        <div class="row">
-            <div class="col-md-12">
-                <hr />
-            </div>
-        </div>
-        <section class="row">
-            <div class="col-md-12">
-                <p>
-                    <a href="https://github.com/michaelrios2015/audiobookPlaya-Project-4">Project 4: Audio Book Player</a>
-                </p>
-                <p>Create the structure of an app to play music for a user and build it out.</p>
-            </div>
-        </section>
-        <div class="row">
-            <div class="col-md-12">
-                <hr />
-            </div>
-        </div>
-        <section class="row">
-            <div class="col-md-12">
-                <p><a href="https://github.com/michaelrios2015/TourGuide-Project-5">Project 5: Tour Guide</a></p>
-                <p>Create an app to guide a user around a city or location of your choice!</p>
-            </div>
-        </section>
-        <div class="row">
-            <div class="col-md-12">
-                <hr />
-            </div>
-        </div>
-        <section class="row">
-            <div class="col-md-12">
-                <p><a href="https://github.com/michaelrios2015/NewsApp-Project-6">Project 6: News</a></p>
-                <p>Create an app to guide a user around a city or location of your choice!This project is stage 1 of a 2 stage project. For this stage, create an app to display recent news stories on a topic of your choice using an API.</p>
-            </div>
-        </section>
-        <div class="row">
-            <div class="col-md-12">
-                <hr />
-            </div>
-        </div>
-		<section class="row">
-            <div class="col-md-12">
-                <p><a href="https://github.com/michaelrios2015/Inventory-Project-7">Project 7: Inventory</a></p>
-                <p>Create the data structure for an app that tracks the inventory of a retail store, including current stock and supplier information. We had to create a database using SQLite</p>
-            </div>
-        </section>
+        <div id="content">
+
 		 <figure class="col-md-12">
         <img id="cat" class="img-responsive" src="certificate-1.jpg" alt="cat" /> 
         <!-- think I am supposed to have multiple sizes of phots for different screens  -->
 		</figure>
     </div>
+	
+	<script>
+  var projects = [
+        {
+        name: "Project 1: Single page App",
+        link: "https://github.com/michaelrios2015/BadArt-Project-1",
+		description: "very first app, it's just a simple single page app designed to get us started"
+    },
+	{
+        name: "Project 2: Wrestling Counter",
+        link: "https://github.com/michaelrios2015/WrestlingCounter-Project-2",
+		description: "Project Submission Design and implement an app to track scores between two teams playing a game. So that we can learn how to get user input and manipulate data"
+    },
+    {
+        name: "Project 3: Quiz",
+        link: "https://github.com/michaelrios2015/Quiz-Project-3",
+		description: "Design and implement a short quiz app about some topic you are familiar with.  They mostly wanted to teach us about conditional statements"
+    },
+    {
+        name: "Project 4: Audio Book Player",
+        link: "https://github.com/michaelrios2015/audiobookPlaya-Project-4",
+		description: "Create the structure of an app to play music for a user and build it out."
+    },
+    {
+        name: "Project 5: Tour Guide",
+        link: "https://github.com/michaelrios2015/TourGuide-Project-5",
+		description: "Create an app to guide a user around a city or location of your choice!"
+    },
+	{
+        name: "Project 6: News",
+        link: "https://github.com/michaelrios2015/NewsApp-Project-6",
+		description: "Create an app to guide a user around a city or location of your choice!This project is stage 1 of a 2 stage project. For this stage, create an app to display recent news stories on a topic of your choice using an API."
+    },
+	{
+        name: "Project 7: Inventory",
+        link: "https://github.com/michaelrios2015/Inventory-Project-7",
+		description: "Create the data structure for an app that tracks the inventory of a retail store, including current stock and supplier information. We had to create a database using SQLite."
+    }
+];
+
+var length = projects.length;
+
+
+var html = ""; //declaring string
+
+
+//make this is a function so I can re-use it??
+
+function displayContent (Content){
+
+	
+    for (var i = 0; i < length; i++) { // each row has three projects
+ 
+        console.log(i);
+        html += '<section class="row">' +
+            '<div class="col-md-12">' +
+                '<p><a href=' + projects[i].link + '>' + projects[i].name + '</a></p>' +
+                '<p>' + projects[i].description + '</p>' +
+            '</div>' +
+        '</section>' +
+		        '<div class="row">' +
+            '<div class="col-md-12">' +
+                '<hr />' +
+            '</div>' +
+        '</div>'
+    }
+
+    html += '</div>';
+
+	// append string to div
+$("#content").append(html);
+}
+
+
+
+displayContent(projects);
+
+console.log(projects);
+
+
+
+</script>
 </body>
 
 </html>
