@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>C++ Projects</title>
+    <title>Andriod Basics</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
     	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -82,23 +82,25 @@ function displayContent (Content){
     for (var i = 0; i < length; i++) { // each row has three projects
  
         console.log(i);
-        html += '<section class="row">' +
+        html += 		        '<div class="row">' +
+            '<div class="col-md-12">' +
+                '<hr />' +
+            '</div>' +
+        '</div>' +
+		
+		'<section class="row">' +
             '<div class="col-md-12">' +
                 '<p><a href=' + projects[i].link + '>' + projects[i].name + '</a></p>' +
                 '<p>' + projects[i].description + '</p>' +
             '</div>' +
-        '</section>' +
-		        '<div class="row">' +
-            '<div class="col-md-12">' +
-                '<hr />' +
-            '</div>' +
-        '</div>'
+        '</section>' 
+
     }
 
     html += '</div>';
 
 	// append string to div
-$("#content").append(html);
+$("#content").prepend(html);
 }
 
 
