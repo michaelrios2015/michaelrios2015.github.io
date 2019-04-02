@@ -61,4 +61,7 @@ $("#content").append(html);
 }
 displayContent(projects);
 
-console.log(projects);
+console.log("HELLO!!");
+//make this is a function so I can re-use it??
+
+
