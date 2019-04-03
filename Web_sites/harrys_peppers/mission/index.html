@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -70,6 +71,8 @@
 
                         </section>
 
+						<div id="pics">
+						</div>
                         <section class="row" style="text-align:center;">
                             <div class="col-md-1"></div>
                             <div class="col-md-3">
@@ -86,6 +89,51 @@
                             <div class="col-md-1"></div>
                         </section>
 
+						<script>
+						
+						var images = [
+    {
+        name: "Peppers",
+        link: "../images/peppers_roof.jpg"
+    },
+	{
+        name: "Peppers",
+        link: "../images/platted_peppers.jpg"
+    },
+    {
+        name: "Peppers",
+        link: "../images/pepper_parking.jpg"
+    }
+	];
+
+	
+function displayPics (content){
+
+	var html = ""; //declaring string
+
+    html += '<section class="row" style="text-align:center;"> <div class="col-md-1"></div>';//building string
+	
+    for (var i = 0; i < content.length; i++) { // each row has three projects
+        html += '<div class="col-md-3">' 
+                 + '<img class="img-responsive" src="' + content[i].link + '" alt='+ content[i].name + 'style="display:inline-block;">'
+            + '</div>';
+
+    };
+
+    html += '<div class="col-md-1 text-center"> </nav>';
+
+	$("#pics").append(html);
+	
+	console.log(html);
+	
+}
+
+displayPics(images);		
+		
+		
+		</script>
+						
+						
 </body>
 
 </html>

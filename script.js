@@ -34,7 +34,7 @@ var html = ""; //declaring string
 
 //make this is a function so I can re-use it??
 
-function displayContent (Content){
+function displayContent (content){
 for (var j = 0; j < length / 3; j++) { // we only want three project per row 
 
     html += '<div class="row">';//building string
@@ -46,8 +46,8 @@ for (var j = 0; j < length / 3; j++) { // we only want three project per row
         console.log(i);
         html += '<section class="col-md-4 col-sm-6 col-xs-12">' +
             '<img class="img-responsive" src="images/nyplPurple.jpg" alt="puppy" />' +
-            '<a href=' + projects[i].link + '>' +
-            '<h3 class="project">' + projects[i].name + '</h3>' +
+            '<a href=' + content[i].link + '>' +
+            '<h3 class="project">' + content[i].name + '</h3>' +
             '</section>';
 
     }

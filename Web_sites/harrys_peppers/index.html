@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -26,26 +27,11 @@
                 <hr>
             </div>
         </div>
-
-        <nav class="row">
-            <div class="col-md-1 text-center">
-            </div>
-            <div class="col-md-2 text-center">
-                <h1><a href="index.html">Home</a></h1>
-            </div>
-            <div class="col-md-2 text-center">
-                <h1><a href="origin/index.html">Our Story</a></h1>
-            </div>
-            <div class="col-md-2 text-center">
-                <h1><a href="mission/index.html">Mission</a></h1>
-            </div>
-            <div class="col-md-2 text-center">
-                <h1><a href="recipes/index.html">Recipies</a></h1>
-            </div>
-            <div class="col-md-3 text-center">
-                <h1><a href="mailto:bigwalruss@gmail.com?Subject=Peppers" method="post" enctype="text/plain">Contact Me</a></h1>
-            </div>
-        </nav>
+		
+		<div id="nav">
+           
+        </div>
+		
 
         <div class="row">
 
@@ -70,6 +56,59 @@
                 <h1>Modeling a better world with peppers</h1>
             </div>
         </footer>
+		
+		<script>
+		
+var projects = [
+    {
+        name: "Home",
+        link: "index.html"
+    },
+	{
+        name: "Our Story",
+        link: "origin/index.html"
+    },
+    {
+        name: "Mission",
+        link: "mission/index.html"
+    },
+    {
+        name: "Recipies",
+        link: "recipes/index.html"
+    },
+	{
+        name: "Contact Me",
+        link: "mailto:bigwalruss@gmail.com?Subject=Peppers"
+    }
+	];
+
+	
+function displayNav (content){
+
+	var html = ""; //declaring string
+
+    html += '<nav class="row"> <div class="col-md-1 text-center"> </div>';//building string
+	
+    for (var i = 0; i < content.length; i++) { // each row has three projects
+        html += '<div class=\"col-md-2 text-center\">' 
+                 + '<h1><a href=\"' + content[i].link + '\">'+ content[i].name + '</a></h1>'
+            + '</div>';
+
+    };
+
+    html += '<div class="col-md-1 text-center"> </nav>';
+
+	$("#nav").append(html);
+	
+	console.log(html);
+	
+}
+
+displayNav(projects);		
+		
+		
+		</script>
+		
 </body>
 
 </html>
