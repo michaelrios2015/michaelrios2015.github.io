@@ -12,6 +12,7 @@ hr {
 
 .img-responsive {
     margin: 0 auto;
+	padding: 1%;
 }
 
 /* Style inputs with type="text", select elements and textareas */
