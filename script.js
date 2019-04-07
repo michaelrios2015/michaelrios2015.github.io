@@ -35,6 +35,7 @@ var html = ""; //declaring string
 //make this is a function so I can re-use it??
 
 function displayContent (content){
+
 for (var j = 0; j < length / 3; j++) { // we only want three project per row 
 
     html += '<div class="row">';//building string
