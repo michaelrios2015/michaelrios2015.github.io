@@ -9,7 +9,25 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../style.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        
+        #map {
+            height: 25em;
+
+        }
+        /* Optional: Makes the sample page fill the window. */
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 
 </head>
 
@@ -23,64 +41,86 @@
             </div>
         </header>
 
-        <div class="row">
+    
+
+		<div class="row">
+			<div class="col-md-12">
+				<hr>
+			</div>
+		</div>
+			
+			<nav class="row">
+				<div class="col-md-1 text-center">
+				</div>
+				<div class="col-md-2 text-center">
+					<h1><a href="../index.html">Home</a></h1>
+				</div>
+				<div class="col-md-2 text-center">
+					<h1><a href="index.html">Our Story</a></h1>
+				</div>
+				<div class="col-md-2 text-center">
+					<h1><a href="../mission/index.html">Mission</a></h1>
+				</div>
+				<div class="col-md-2 text-center">
+					<h1><a href="../recipes/index.html">Recipies</a></h1>
+				</div>
+				<div class="col-md-3 text-center">
+					<h1><a href="mailto:bigwalruss@gmail.com?Subject=Peppers" method="post" enctype="text/plain">Contact Me</a></h1>
+				</div>
+			</nav>
+
+			<div class="row">
+				<div class="col-md-12">
+					<hr>
+				</div>
+			</div>
+
+	
+	
+    <div id="map"></div>
+
+        <section class="row">
             <div class="col-md-12">
-                <hr>
-            </div>
-        </div>
+                <h1>Our Story</h1>
+                <p>We found these peppers in the Loreto district of Peru. Starting in the town of Jaen, we traveled along roads adjacent rivers to multiple small communities. Although each town we visited was very different, we began to notice a trend, something they all had in common: hot sauce. Specifically, a vinegar based sauce made with round, orange peppers that we could not identify. We came to learn that these peppers we called “aji charapitas.” Before leaving the country, we were able to find seeds packaged adequately well enough so that we could take them home. When we returned, we immediately began to draft methods of growing them and reaching out to local restaurants who we thought would be interested in the peppers. Since, they have been incorporated in dishes served at a James Beard Foundation event featuring Peruvian food. </p>
+			</div>
+		</section>
 
-        <nav class="row">
-            <div class="col-md-1 text-center">
-            </div>
-            <div class="col-md-2 text-center">
-                <h1><a href="../index.html">Home</a></h1>
-            </div>
-            <div class="col-md-2 text-center">
-                <h1><a href="index.html">Our Story</a></h1>
-            </div>
-            <div class="col-md-2 text-center">
-                <h1><a href="../mission/index.html">Mission</a></h1>
-            </div>
-            <div class="col-md-2 text-center">
-                <h1><a href="../recipes/index.html">Recipies</a></h1>
-            </div>
-            <div class="col-md-3 text-center">
-                <h1><a href="mailto:bigwalruss@gmail.com?Subject=Peppers" method="post" enctype="text/plain">Contact Me</a></h1>
-            </div>
-        </nav>
 
-        <div class="row">
+        <section class="row">
             <div class="col-md-12">
-                <hr>
+
             </div>
-        </div>
 
+            <div id="pics">
+            </div>
+         </section>   
+	</div>
 
-            <section class="row">
-                <div class="col-md-12">
-                    <h1>Our Story</h1>
-                    <p>We found these peppers in the Loreto district of Peru. Starting in the town of Jaen, we traveled along roads adjacent rivers to multiple small communities. Although each town we visited was very different, we began to notice a trend, something they all had in common: hot sauce. Specifically, a vinegar based sauce made with round, orange peppers that we could not identify. We came to learn that these peppers we called “aji charapitas.” Before leaving the country, we were able to find seeds packaged adequately well enough so that we could take them home. When we returned, we immediately began to draft methods of growing them and reaching out to local restaurants who we thought would be interested in the peppers. Since, they have been incorporated in dishes served at a James Beard Foundation event featuring Peruvian food. </p>
-            </section>
+			
+            <script src="../script.js"></script>
+            <script src="script.js"></script>
 
-                <section class="row">
-                    <div class="col-md-12">
+            <script>
+function initMap() {
+  var myLatLng = {lat: -5.7094, lng: -78.7986};
 
-                        <p align="center">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4076717.8106665695!2d-77.18642147810512!3d-3.7732192347849036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91c14d60e710a1fb%3A0x5ddac915d1e32ef3!2sLoreto+Province%2C+Peru!5e0!3m2!1sen!2sus!4v1540512404079" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                        </p>
-                </section>
-                    <section class="row">
-                        <div class="col-md-12">
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 8,
+    center: myLatLng
+  });
 
-                        </div>
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Hello World!'
+  });
+}            </script>
 
-                   
-       
-<div id="pics">
-</div>
-	 
-					<script src="../script.js"></script>
-					<script src="script.js"></script>
-	 
+			
+			
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhfx5ztQ2WuiZyMWQTDtbdb_UEO304344&callback=initMap" async defer></script>
+
 </body>
+
 </html>
