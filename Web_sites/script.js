@@ -18,6 +18,11 @@ var projects = [
         name: "Ian's Website",
         link: "Ians/index.html",
         description: "For Cooking"
+    },
+	    {
+        name: "Mommy's Website II",
+        link: "mommy_II/index.html",
+        description: "For Traveling"
     }
 ];
 

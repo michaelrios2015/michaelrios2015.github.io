@@ -43,3 +43,18 @@ var images = [
 
 displayPics(images);		
 		
+		
+function initMap() {
+  var myLatLng = {lat: -5.7094, lng: -78.7986};
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 8,
+    center: myLatLng
+  });
+
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Hello World!'
+  });
+}            
