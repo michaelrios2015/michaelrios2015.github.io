@@ -1,7 +1,7 @@
 var images = [
     {
         name: "Plane",
-        link: "../images/seal.jpg"
+        link: "../images/seal.JPG"
     },
 	{
         name: "Jaen",
@@ -17,7 +17,7 @@ var images = [
     },
 	{
         name: "Boat",
-        link: "../images/landscape_3.jpg"
+        link: "../images/landscape_3.JPG"
     },
     {
         name: "Girl and parrot",
@@ -25,7 +25,7 @@ var images = [
     },
     {
         name: "Juice Bar",
-        link: "../images/mommy_and_bob.jpg"
+        link: "../images/mommy_and_bob.JPG"
     },
     {
         name: "Monkey",
