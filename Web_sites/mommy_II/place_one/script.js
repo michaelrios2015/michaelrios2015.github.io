@@ -5,15 +5,15 @@ var images = [
     },
 	{
         name: "Jaen",
-        link: "../images/birds.jpeg"
+        link: "../images/birds.jpg"
     },
 	{
         name: "Village",
-        link: "../images/bob.jpeg"
+        link: "../images/bob.jpg"
     },
 	{
         name: "Village",
-        link: "../images/landscape_2.jpeg"
+        link: "../images/landscape_2.jpg"
     },
 	{
         name: "Boat",
@@ -21,7 +21,7 @@ var images = [
     },
     {
         name: "Girl and parrot",
-        link: "../images/landscape.jpeg"
+        link: "../images/landscape.jpg"
     },
     {
         name: "Juice Bar",
@@ -29,11 +29,11 @@ var images = [
     },
     {
         name: "Monkey",
-        link: "../images/penguin_2.jpeg"
+        link: "../images/penguin_2.jpg"
     },
     {
         name: "Harry and Fish",
-        link: "../images/penguin.jpeg"
+        link: "../images/penguin.jpg"
     }
 	
 	];
