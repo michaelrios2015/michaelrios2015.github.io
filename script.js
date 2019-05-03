@@ -1,4 +1,6 @@
-  var projects = [
+/* array of objects for home of website */
+
+var projects = [
         {
         name: "FEND",
         link: "FEND/index.html"
@@ -32,9 +34,9 @@ var length = projects.length;
 var html = ""; //declaring string
 
 
-//make this is a function so I can re-use it??
+//displays intial website
 
-function displayContent (content){
+function displayContentHomePage(content){
 
 for (var j = 0; j < length / 3; j++) { // we only want three project per row 
 
@@ -60,9 +62,38 @@ for (var j = 0; j < length / 3; j++) { // we only want three project per row
 // append string to div
 $("#content").append(html);
 }
-displayContent(projects);
 
-console.log("HELLO!!");
-//make this is a function so I can re-use it??
+
+function displayProjects(contents) {
+
+    var length = contents.length;
+
+
+    var html = ""; //declaring string
+
+
+    for (var i = 0; i < length; i++) { 
+
+        console.log(i);
+        html += '<div class="row">' +
+            '<div class="col-md-12">' +
+            '<hr />' +
+            '</div>' +
+            '</div>' +
+			//the projects
+            '<section class="row">' +
+            '<div class="col-md-12">' +
+            '<p><a href=' + contents[i].link + '>' + contents[i].name + '</a></p>' +
+            '<p>' + contents[i].description + '</p>' +
+            '</div>' +
+            '</section>'
+
+    }
+
+    html += '</div>';
+
+    // append string to div
+    $("#content").append(html);
+}
 
 
