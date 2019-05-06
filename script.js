@@ -63,6 +63,7 @@ for (var j = 0; j < length / 3; j++) { // we only want three project per row
 $("#content").append(html);
 }
 
+/* builds the rest of the pages */
 
 function displayProjects(contents) {
 
