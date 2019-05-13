@@ -32,11 +32,11 @@ var navigations = [{
 	},
 	{
 		name: "Trip Two",
-		link: "index.html"
+		link: "place_two/index.html"
 	},
 	{
 		name: "Trip Three",
-		link: "index.html"
+		link: "place_three/index.html"
 	},
 	{
 		name: "Contact Me",

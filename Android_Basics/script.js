@@ -38,9 +38,6 @@ var projects = [{
 
 console.log("JELLO!!");
 
-
-
-
 displayProjects(projects);
 
 console.log(projects);

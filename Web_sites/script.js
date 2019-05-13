@@ -5,29 +5,29 @@ var projects = [
         description: "To spread peppers"
     },
     {
-        name: "Kai's Website",
-        link: "kais_sight/index.html",
-        description: "For Videography"
-    },
-    {
         name: "Mommy's Website",
         link: "Mommys_travels/index.html",
         description: "For Travel"
     },
-    {
-        name: "Ian's Website",
-        link: "Ians/index.html",
-        description: "For Cooking"
-    },
-	    {
+	{
         name: "Mommy's Website II",
         link: "mommy_II/index.html",
         description: "For Traveling"
     },
-	    {
-        name: "blog",
+	{
+        name: "Blog",
         link: "myblog/index.html",
-        description: "For Traveling"
+        description: "Experiments in Jekyll"
+    },
+	    {
+        name: "Ian's Website",
+        link: "Ians/index.html",
+        description: "For Cooking"
+    },
+	{
+        name: "Kai's Website",
+        link: "kais_sight/index.html",
+        description: "For Videography"
     }
 ];
 

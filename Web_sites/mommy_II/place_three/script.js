@@ -45,7 +45,7 @@ var navigationsPlaceOne = [{
 	},
 	{
 		name: "Trip One",
-		link: "index.html"
+		link: "../place_one/index.html"
 	},
 	{
 		name: "Trip Two",
@@ -53,7 +53,7 @@ var navigationsPlaceOne = [{
 	},
 	{
 		name: "Trip Three",
-		link: "../place_three/index.html"
+		link: "index.html"
 	},
 	{
 		name: "Contact Me",

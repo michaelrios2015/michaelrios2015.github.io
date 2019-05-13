@@ -45,11 +45,11 @@ var navigationsPlaceOne = [{
 	},
 	{
 		name: "Trip One",
-		link: "index.html"
+		link: "../place_one/index.html"
 	},
 	{
 		name: "Trip Two",
-		link: "../place_two/index.html"
+		link: "index.html"
 	},
 	{
 		name: "Trip Three",

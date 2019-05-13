@@ -6,6 +6,14 @@ var projects = [
         link: "FEND/index.html"
     },
 	{
+        name: "Web Animation",
+        link: "Random_Javascript/index.html"
+    },
+	{
+        name: "Websites",
+        link: "Web_sites/index.html"
+    },
+	{
         name: "C++ Projects",
         link: "cpp_projects/index.html"
     },
@@ -14,17 +22,10 @@ var projects = [
         link: "java_projects/index.html"
     },
     {
-        name: "Web Animation",
-        link: "Random_Javascript/index.html"
-    },
-    {
         name: "Android Basics",
         link: "Android_Basics/index.html"
-    },
-    {
-        name: "Websites",
-        link: "Web_sites/index.html"
     }
+    
 
 ];
 
@@ -43,7 +44,7 @@ for (var j = 0; j < length / 3; j++) { // we only want three project per row
     html += '<div class="row">';//building string
 
 
-	
+
     for (var i = (j * 3); i < 3 + (j * 3); i++) { // each row has three projects
         console.log(j);
         console.log(i);
@@ -75,6 +76,7 @@ function displayProjects(contents) {
 
     for (var i = 0; i < length; i++) { 
 
+		//adds info for each project
         console.log(i);
         html += '<div class="row">' +
             '<div class="col-md-12">' +
@@ -98,3 +100,4 @@ function displayProjects(contents) {
 }
 
 
+						
