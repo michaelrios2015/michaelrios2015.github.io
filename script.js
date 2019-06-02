@@ -79,13 +79,13 @@ function displayProjects(contents) {
 		//adds info for each project
         console.log(i);
         html += '<div class="row">' +
-            '<div class="col-md-12">' +
+            '<div class="col-md-12 col-sm-12 col-xs-12">' +
             '<hr />' +
             '</div>' +
             '</div>' +
 			//the projects
             '<section class="row">' +
-            '<div class="col-md-12">' +
+            '<div class="col-md-12 col-sm-12 col-xs-12">' +
             '<p><a href=' + contents[i].link + '>' + contents[i].name + '</a></p>' +
             '<p>' + contents[i].description + '</p>' +
             '</div>' +
