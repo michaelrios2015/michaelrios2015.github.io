@@ -28,6 +28,11 @@ var projects = [
         name: "Kai's Website",
         link: "kais_sight/index.html",
         description: "For Videography"
+    },
+	{
+        name: "Flex",
+        link: "flex/index.html",
+        description: "testing flex"
     }
 ];
 
