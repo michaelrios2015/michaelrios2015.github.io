@@ -30,7 +30,15 @@
 					.box {
 					width: 100%;
 					text-align: center;
+					}
 					
+					.col-12{
+					width: 100%;
+					}
+					
+					.line{
+					width: 99%;
+					margin-bottom: 20px;
 					
 					}
 					
@@ -40,13 +48,28 @@
 					box-sizing: border-box;
 					}
 
+					.description {
+					font-size: 2em;
+					}
+
 					.img-responsive {
 					width: 100%
+					}
+					
+					@media screen and (max-width: 549px) {
+					.img-responsive {
+					display:none;	
+					}
+					.box {
+					text-align: left;
+					}
+					
 					}
 					
 					@media screen and (min-width: 550px) {
 					.one {
 					width: 50%;
+					}
 					}
 
 
@@ -54,6 +77,7 @@
 					.one {
 					width: 33%;
 
+					}
 					}
 
 
@@ -65,41 +89,48 @@
 			</head>
 			<body>
 
-						<header> 
-					<h1 class="title">TITLE </h1>
+			<header> 
+				<h1 class="title">TITLE </h1>
+			</header>
 
-				</header>
+				<hr class="line">
+			
 
 		
-				<div class="container">
+			<div class="container">
 				
 
 
 				
 					<div class="box one">
-						<img class="img-responsive" src="https://placedog.net/500" alt="puppy"></div>
-					<div class="box one">
-						<img class="img-responsive" src="https://placedog.net/500" alt="puppy">
-						<p>text</p>
+						<img class="img-responsive" src="https://placedog.net/500/500" alt="puppy">
+						<p class="description">text</p>
 					</div>
 					<div class="box one">
-						<img class="img-responsive" src="https://placedog.net/500" alt="puppy">
-						<p>text</p>
+						<img class="img-responsive" src="https://placedog.net/500/500" alt="puppy">
+						<p class="description">text</p>
 					</div>
 					<div class="box one">
-						<img class="img-responsive" src="https://placedog.net/500" alt="puppy">
-						<p>text</p>
+						<img class="img-responsive" src="https://placedog.net/500/500" alt="puppy">
+						<p class="description">text</p>
 					</div>
 					<div class="box one">
-						<img class="img-responsive" src="https://placedog.net/500" alt="puppy">
-						<p>text</p>
+						<img class="img-responsive" src="https://placedog.net/500/500" alt="puppy">
+						<p class="description">text</p>
 					</div>
 					<div class="box one">
-						<img class="img-responsive" src="https://placedog.net/500" alt="puppy">
-						<p>text</p>
+						<img class="img-responsive" src="https://placedog.net/500/500" alt="puppy">
+						<p class="description">text</p>
+					</div>
+					<div class="box one">
+						<img class="img-responsive" src="https://placedog.net/500/500" alt="puppy">
+						<p class="description">text</p>
 					</div>
 					<div class="box one"></div>
 				</div>
+				
+
+				
 			</body>
 </html>
 							
