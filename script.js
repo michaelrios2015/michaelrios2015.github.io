@@ -82,7 +82,7 @@ function displayProjects(contents) {
 			//the projects
             '<section class="row">' +
             '<div class="col-md-12 col-sm-12 col-xs-12">' +
-            '<p><a href=' + contents[i].link + '>' + contents[i].name + '</a></p>' +
+            '<p><a href=' + contents[i].link + '><h3>' + contents[i].name + '</h3></a></p>' +
             '<p>' + contents[i].description + '</p>' +
             '</div>' +
             '</section>'
