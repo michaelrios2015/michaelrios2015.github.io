@@ -39,14 +39,20 @@ var html = ""; //declaring string
 
 function displayContentHomePage(content){
 
-    //html += '<div class="row">';//building string
+    html += '<div class="row">';//building string
 
-for (var i = 0; i < length; i++) { 
+for (var i = 0; i < length; i++) { // we only want three project per row 
 
-        html += '<section class="box one">' +
+
+
+
+
+        //console.log(j);
+        //console.log(i);
+        html += '<section class="col-md-4 col-sm-6 col-xs-12">' +
             '<img class="img-responsive" src="images/nyplPurple.jpg" alt="puppy" />' +
             '<a href=' + content[i].link + '>' +
-            '<h3>' + content[i].name + '</h3>' +
+            '<h3 class="project">' + content[i].name + '</h3>' +
             '</section>';
 
     
@@ -59,7 +65,6 @@ for (var i = 0; i < length; i++) {
 // append string to div
 $("#content").append(html);
 }
-
 /* builds the rest of the pages */
 
 function displayProjects(contents) {
