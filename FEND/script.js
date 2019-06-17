@@ -1,14 +1,14 @@
 var projects = [{
         name: "Project 1: Generic Webiste",
         link: "Project_1_generic_website/index.html",
-        description: "A simple webiste designed to show the basic of responsive design using the <b>Bootstrap framework</b>"
+        description: "A simple webiste designed to show the basic of responsive design using the <b>Bootstrap framework</b>.  I should add a picture elemenet and probably make the website more my own, I will add that to the TODO :)"
                    
 
 		},
     {
         name: "Project 2: Resume",
         link: "Project_2_Resume/index.html",
-        description: "Not sure I like the formating, but the excericse was designed to show us how to use javascript to create the website so the formatting is less important"
+        description: "I hope to redo this at some point.  It is an excercise in using objects and simple JavaScript to build a reusable template, nothing wrong with it and I have started to modify to make it my own but more should be done."
 		
 		},
     {

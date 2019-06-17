@@ -9,16 +9,17 @@
   <title>Resume</title>
 
   <!-- Load the page styles. -->
+          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link href="css/style.css" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
 
   <!--
   Uncomment the <script> tag below when you're ready to add an interactive
   Google Map to your resume!
   -->
-  <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCVN7I_2Ha7s8fF2oR1-NxI58Dc57SO6fA"></script>
+     <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBhfx5ztQ2WuiZyMWQTDtbdb_UEO304344"></script>
     
     
   <meta name="viewport" content="width=device-width">
@@ -52,6 +53,7 @@ redesign so I can expand the sections??
     <div id="education" class='gray'>
       <h2>Education</h2>
     </div>
+	
     <div id="mapDiv">
       <h2>Where I've Lived and Worked</h2>
     </div>
@@ -72,8 +74,6 @@ redesign so I can expand the sections??
     
   <script type="text/javascript">
 
-      
-
     if(document.getElementsByClassName('flex-item').length === 0) {
       document.getElementById('topContacts').style.display = 'none';
     }
@@ -92,9 +92,9 @@ redesign so I can expand the sections??
     if(document.getElementsByClassName('flex-item').length === 0) {
       document.getElementById('letsConnect').style.display = 'none';
     }
-    if(document.getElementById('map') === null) {
+   /* if(document.getElementById('map') === null) {
       document.getElementById('mapDiv').style.display = 'none';
-    }
+    }*/
   </script>
 </body>
 </html>

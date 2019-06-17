@@ -6,8 +6,10 @@ var bio = {
     "contacts": {
         "mobile": "443-602-6012",
         "email": "michael.rios093@gmail.com",
-        "github": "https://github.com/michaelrios2015",
+		"github": "michaelrios2015",
+        "githubLink": "https://github.com/michaelrios2015",
         "instgram": "michael_rios2001",
+		"instgramLink": "https://www.instagram.com/michael_rios2001/",
         "location": "News York, NY"
     },
 
@@ -19,14 +21,6 @@ var bio = {
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span>%data%</span><hr/>';
 
-/*var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLinstgram = '<li class="flex-item"><span class="orange-text">instagram</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><a href="%data%"><span class="white-text">%data%</span></a></li>';
-var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
-*/
 
 //Display Biography
 bio.display = function() {
@@ -37,8 +31,9 @@ bio.display = function() {
     var formattedHTMLmobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var formattedHTMLemail = HTMLemail.replace("%data%", bio.contacts.email);
     var formattedHTMLinstagram = HTMLinstgram.replace("%data%", bio.contacts.instgram);
-    var formattedHTMLgithub = HTMLgithub.replace("%data%", bio.contacts.github);
-    formattedHTMLgithub = formattedHTMLgithub.replace("%data%", bio.contacts.github);
+	formattedHTMLinstagram = formattedHTMLinstagram.replace("%data%", bio.contacts.instgramLink);
+    var formattedHTMLgithub = HTMLgithub.replace("%data%", bio.contacts.githubLink);
+    formattedHTMLgithub = formattedHTMLgithub.replace("%data%", bio.contacts.githubLink);
 	var formattedHTMLlocation = HTMLlocation.replace("%data%", bio.contacts.location);
     var formattedHTMLcontactGeneric = formattedHTMLmobile + formattedHTMLemail + formattedHTMLgithub + formattedHTMLinstagram + formattedHTMLlocation;
 	var formattedHTMLbioPic = HTMLbioPic.replace("%data%", bio.biopic);
@@ -69,13 +64,15 @@ var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span>%data%</span><hr/>';
 
 //var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<div class="col-md-4"><span class="orange-text">mobile</span><span class="white-text">%data%</span></div>';
-var HTMLemail = '<div class="col-md-4"><span class="orange-text">email</span><span class="white-text">%data%</span></div>';
-var HTMLinstgram = '<div class="col-md-4"><span class="orange-text">instagram</span><span class="white-text">%data%</span></div>';
-var HTMLgithub = '<div class="col-md-4"><span class="orange-text">github</span><a href="%data%"><span class="white-text">%data%</span></a></div>';
-var HTMLblog = '<div class="col-md-4"><span class="orange-text">blog</span><span class="white-text">%data%</span></div>';
-var HTMLlocation = '<div class="col-md-4"><span class="orange-text">location</span><span class="white-text">%data%</span></div>';
+var HTMLmobile = '<div class="col-md-4 col-sm-6"><span class="orange-text">mobile</span><span class="white-text">%data%</span></div>';
+var HTMLemail = '<div class="col-md-4 col-sm-6"><span class="orange-text">email</span><a href="mailto:%data%"><span class="white-text">%data%</span></a></div>';
+var HTMLinstgram = '<div class="col-md-4 col-sm-6"><span class="orange-text">instagram</span><a href="%data%"><span class="white-text">%data%</span></a></div>';
+var HTMLgithub = '<div class="col-md-4 col-sm-6"><span class="orange-text">github</span><a href="%data%"><span class="white-text">%data%</span></a></div>';
+var HTMLblog = '<div class="col-md-4 col-sm-6"><span class="orange-text">blog</span><span class="white-text">%data%</span></div>';
+var HTMLlocation = '<div class="col-md-4 col-sm-6"><span class="orange-text">location</span><span class="white-text">%data%</span></div>';
 
+var HTMLskillsStart = '<h3 id="skillsH3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
+var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
 
 bio.displayBS = function() {
@@ -86,11 +83,13 @@ bio.displayBS = function() {
     
 	var formattedHTMLmobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var formattedHTMLemail = HTMLemail.replace("%data%", bio.contacts.email);
-    var formattedHTMLinstagram = HTMLinstgram.replace("%data%", bio.contacts.instgram);
-    var formattedHTMLgithub = HTMLgithub.replace("%data%", bio.contacts.github);
+	formattedHTMLemail = formattedHTMLemail.replace("%data%", bio.contacts.email);
+    var formattedHTMLinstagram = HTMLinstgram.replace("%data%", bio.contacts.instgramLink);
+	formattedHTMLinstagram = formattedHTMLinstagram.replace("%data%", bio.contacts.instgram);
+    var formattedHTMLgithub = HTMLgithub.replace("%data%", bio.contacts.githubLink);
     formattedHTMLgithub = formattedHTMLgithub.replace("%data%", bio.contacts.github);
 	var formattedHTMLlocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    var formattedHTMLcontactGeneric = formattedHTMLmobile + formattedHTMLemail + formattedHTMLgithub + formattedHTMLinstagram + formattedHTMLlocation;
+    var formattedHTMLcontactGeneric = '<div class = row>' + formattedHTMLmobile + formattedHTMLemail + formattedHTMLgithub + formattedHTMLinstagram + formattedHTMLlocation + '</div>';
 	var formattedHTMLbioPic = HTMLbioPic.replace("%data%", bio.biopic);
     var formattedHTMLwelcome = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
 

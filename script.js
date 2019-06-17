@@ -29,35 +29,28 @@ var projects = [
 
 ];
 
-var length = projects.length;
 
-
-var html = ""; //declaring string
 
 
 //displays intial website
 
 function displayContentHomePage(content){
 
+var length = projects.length;
+
+
+var html = ""; //declaring string
+
     html += '<div class="row">';//building string
 
-for (var i = 0; i < length; i++) { // we only want three project per row 
+for (var i = 0; i < length; i++) { 
 
 
-
-
-
-        //console.log(j);
-        //console.log(i);
         html += '<section class="col-md-4 col-sm-6 col-xs-12">' +
             '<img class="img-responsive" src="images/nyplPurple.jpg" alt="puppy" />' +
             '<a href=' + content[i].link + '>' +
             '<h3 class="project">' + content[i].name + '</h3>' +
             '</section>';
-
-    
-
-
 
 }
 
