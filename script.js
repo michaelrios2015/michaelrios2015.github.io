@@ -1,7 +1,8 @@
-/* array of objects for home of website */
+/* array of objects for home of website
+not really needed but I wanted to understand objects more */
 
 var projects = [
-        {
+    {
         name: "FEND",
         link: "FEND/index.html"
     },
@@ -43,11 +44,11 @@ var html = ""; //declaring string
 
     html += '<div class="row">';//building string
 
-for (var i = 0; i < length; i++) { 
+for (var i = 0; i < length; i++) { //apperently I did not need to worry about only having three in each row 
 
 
         html += '<section class="col-md-4 col-sm-6 col-xs-12">' +
-            '<img class="img-responsive" src="images/nyplPurple.jpg" alt="puppy" />' +
+            '<img class="img-responsive" src="images/nyplPurple.jpg" alt="police guy from nypl digital" />' +
             '<a href=' + content[i].link + '>' +
             '<h3 class="project">' + content[i].name + '</h3>' +
             '</section>';
@@ -58,7 +59,7 @@ for (var i = 0; i < length; i++) {
 // append string to div
 $("#content").append(html);
 }
-/* builds the rest of the pages */
+/* builds the rest of the pages is it good to have it here*/
 
 function displayProjects(contents) {
 

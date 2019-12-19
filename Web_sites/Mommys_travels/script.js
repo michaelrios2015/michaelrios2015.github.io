@@ -32,6 +32,7 @@ var wikiApi = function (name, year) {
 		//console.log(articleList);
 		var totalContent;
 		var length = articleList.length;
+		console.log(length);
 		infoContent = [];
 		//console.log(articleList.length);
 		//really just need the first one for the content??

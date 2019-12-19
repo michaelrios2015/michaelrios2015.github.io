@@ -1,21 +1,22 @@
-///Biography
-
+///Biography object
 var bio = {
-    "name": "Mike Rios",
-    "role": "Computery GUY/GAL",
-    "contacts": {
-        "mobile": "443-602-6012",
-        "email": "michael.rios093@gmail.com",
-		"github": "michaelrios2015",
-        "githubLink": "https://github.com/michaelrios2015",
-        "instgram": "michael_rios2001",
-		"instgramLink": "https://www.instagram.com/michael_rios2001/",
-        "location": "News York, NY"
+    name: "Mike Rios",
+    role: "Computery GUY/GAL",
+    //object within an object
+    contacts: {
+        mobile: "443-602-6012",
+        email: "michael.rios093@gmail.com",
+		github: "michaelrios2015",
+        githubLink: "https://github.com/michaelrios2015",
+        instgram: "michael_rios2001",
+		instgramLink: "https://www.instagram.com/michael_rios2001/",
+        location: "News York, NY"
     },
 
-    "welcomeMessage": "Greetings Earthlings",
-    "skills": ["HTML", "CSS", "Javascript", "Java", "C++", "Nice guy"],
-    "biopic": "images/cat-smaller.jpg"
+    welcomeMessage: "Greetings Earthlings",
+    //array
+    skills: ["HTML", "CSS", "Javascript", "Java", "C++", "Nice guy"],
+    biopic: "images/cat-smaller.jpg"
 }
 
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
@@ -42,8 +43,7 @@ bio.display = function() {
 
 
 
-
-	//append to page
+	//an excercise in append and prepend 
 	$("#header").prepend(formattedRole);
     $("#header").prepend(formattedName);
 	$("#topContacts").append(formattedHTMLcontactGeneric);
@@ -52,7 +52,8 @@ bio.display = function() {
     $("#header").append(formattedHTMLwelcome);
     $("#header").append(HTMLskillsStart);
 
-	for (skill in bio.skills) {
+    //the forr in might be out of favor by now should check
+    for (skill in bio.skills) {
 
         var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill]);
         $("#skills:last").append(formattedSkills);
