@@ -1,10 +1,10 @@
 ///Biography object
 var bio = {
     name: "Mike Rios",
-    role: "Computery GUY/GAL",
+    role: "Computer Person",
     //object within an object
     contacts: {
-        mobile: "443-602-6012",
+        //mobile: "443-602-6012",
         email: "michael.rios093@gmail.com",
 		github: "michaelrios2015",
         githubLink: "https://github.com/michaelrios2015",
@@ -16,73 +16,36 @@ var bio = {
     welcomeMessage: "Greetings Earthlings",
     //array
     skills: ["HTML", "CSS", "Javascript", "Java", "C++", "Nice guy"],
-    biopic: "images/cat-smaller.jpg"
-}
+    //biopic: "images/cat-smaller.jpg"
+};
+
+
+//varibles for formating
 
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span>%data%</span><hr/>';
 
-
-//Display Biography
-bio.display = function() {
-
-    //put info in formatted variables
-	var formattedName = HTMLheaderName.replace("%data%", bio.name);
-    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-    var formattedHTMLmobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-    var formattedHTMLemail = HTMLemail.replace("%data%", bio.contacts.email);
-    var formattedHTMLinstagram = HTMLinstgram.replace("%data%", bio.contacts.instgram);
-	formattedHTMLinstagram = formattedHTMLinstagram.replace("%data%", bio.contacts.instgramLink);
-    var formattedHTMLgithub = HTMLgithub.replace("%data%", bio.contacts.githubLink);
-    formattedHTMLgithub = formattedHTMLgithub.replace("%data%", bio.contacts.githubLink);
-	var formattedHTMLlocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    var formattedHTMLcontactGeneric = formattedHTMLmobile + formattedHTMLemail + formattedHTMLgithub + formattedHTMLinstagram + formattedHTMLlocation;
-	var formattedHTMLbioPic = HTMLbioPic.replace("%data%", bio.biopic);
-    var formattedHTMLwelcome = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
-
-
-
-
-	//an excercise in append and prepend 
-	$("#header").prepend(formattedRole);
-    $("#header").prepend(formattedName);
-	$("#topContacts").append(formattedHTMLcontactGeneric);
-    $("#footerContacts").append(formattedHTMLcontactGeneric);
-    $("#header").append(formattedHTMLbioPic);
-    $("#header").append(formattedHTMLwelcome);
-    $("#header").append(HTMLskillsStart);
-
-    //the forr in might be out of favor by now should check
-    for (skill in bio.skills) {
-
-        var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill]);
-        $("#skills:last").append(formattedSkills);
-
-    }
-}
-
-var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span>%data%</span><hr/>';
 
 //var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<div class="col-md-4 col-sm-6"><span class="orange-text">mobile</span><span class="white-text">%data%</span></div>';
-var HTMLemail = '<div class="col-md-4 col-sm-6"><span class="orange-text">email</span><a href="mailto:%data%"><span class="white-text">%data%</span></a></div>';
-var HTMLinstgram = '<div class="col-md-4 col-sm-6"><span class="orange-text">instagram</span><a href="%data%"><span class="white-text">%data%</span></a></div>';
-var HTMLgithub = '<div class="col-md-4 col-sm-6"><span class="orange-text">github</span><a href="%data%"><span class="white-text">%data%</span></a></div>';
-var HTMLblog = '<div class="col-md-4 col-sm-6"><span class="orange-text">blog</span><span class="white-text">%data%</span></div>';
-var HTMLlocation = '<div class="col-md-4 col-sm-6"><span class="orange-text">location</span><span class="white-text">%data%</span></div>';
+//var HTMLmobile = '<div class="col-md-4 col-sm-6"><span class="orange-text">mobile</span><span>%data%</span></div>';
+var HTMLemail = '<div class="col-md-3 col-sm-6"><span class="orange-text">email</span><a href="mailto:%data%"><span>%data%</span></a></div>';
+var HTMLinstgram = '<div class="col-md-3 col-sm-6"><span class="orange-text">instagram</span><a href="%data%"><span>%data%</span></a></div>';
+var HTMLgithub = '<div class="col-md-3 col-sm-6"><span class="orange-text">github</span><a href="%data%"><span>%data%</span></a></div>';
+var HTMLblog = '<div class="col-md-3 col-sm-6"><span class="orange-text">blog</span><span>%data%</span></div>';
+var HTMLlocation = '<div class="col-md-3 col-sm-6"><span class="orange-text">location</span><span>%data%</span></div>';
 
 var HTMLskillsStart = '<h3 id="skillsH3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+var HTMLskills = '<li class="flex-item"><span>%data%</span></li>';
 
 
+//Display Biography function
 bio.displayBS = function() {
 
     //put info in formatted variables
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
     
-	var formattedHTMLmobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+	//var formattedHTMLmobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var formattedHTMLemail = HTMLemail.replace("%data%", bio.contacts.email);
 	formattedHTMLemail = formattedHTMLemail.replace("%data%", bio.contacts.email);
     var formattedHTMLinstagram = HTMLinstgram.replace("%data%", bio.contacts.instgramLink);
@@ -90,9 +53,9 @@ bio.displayBS = function() {
     var formattedHTMLgithub = HTMLgithub.replace("%data%", bio.contacts.githubLink);
     formattedHTMLgithub = formattedHTMLgithub.replace("%data%", bio.contacts.github);
 	var formattedHTMLlocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    var formattedHTMLcontactGeneric = '<div class = row>' + formattedHTMLmobile + formattedHTMLemail + formattedHTMLgithub + formattedHTMLinstagram + formattedHTMLlocation + '</div>';
-	var formattedHTMLbioPic = HTMLbioPic.replace("%data%", bio.biopic);
-    var formattedHTMLwelcome = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
+    var formattedHTMLcontactGeneric = '<div class = row>'  + formattedHTMLemail + formattedHTMLgithub + formattedHTMLinstagram + formattedHTMLlocation + '</div>';
+	//var formattedHTMLbioPic = HTMLbioPic.replace("%data%", bio.biopic);
+    //var formattedHTMLwelcome = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
 
 
 
@@ -103,8 +66,8 @@ bio.displayBS = function() {
     $("#header").prepend(formattedName);
 	$("#topContacts").append(formattedHTMLcontactGeneric);
     $("#footerContacts").append(formattedHTMLcontactGeneric);
-    $("#header").append(formattedHTMLbioPic);
-    $("#header").append(formattedHTMLwelcome);
+    //$("#header").append(formattedHTMLbioPic);
+    //$("#header").append(formattedHTMLwelcome);
     $("#header").append(HTMLskillsStart);
 
 	for (skill in bio.skills) {
@@ -113,6 +76,9 @@ bio.displayBS = function() {
         $("#skills:last").append(formattedSkills);
 
     }
+
+    $("#header").append('<hr/>');
+  
 }
 
 bio.displayBS();
@@ -123,7 +89,7 @@ var work = {
             "employer": "NYPL",
             "title": "Librarian",
             "location": "Bronx, NY",
-            "dates": "2014-2016",
+            "dates": "2014-Present",
             "url": "https://www.NYPL.org",
             "description": "Helping the people"
         }, {
