@@ -88,17 +88,17 @@ var work = {
     "jobs": [{ //array of objects with
             "employer": "NYPL",
             "title": "Librarian",
-            "location": "Bronx, NY",
+            "location": "New York, NY",
             "dates": "2014-Present",
             "url": "https://www.NYPL.org",
-            "description": "Helping the people"
+            "description": "Hopefully being somewhat useful, who knows really"
         }, {
             "employer": "Enoch Pratt Free Library",
             "title": "Librarian",
             "location": "Baltimore, MD",
             "dates": "2003-2014",
             "url": "https://www.prattlibrary.org",
-            "description": "Helping people in Baltimore"
+            "description": "Helping people in Baltimore, possibly left my poor girlfriend sick and on her own"
         },
 
     ]

@@ -48,9 +48,9 @@ for (var i = 0; i < length; i++) { //apperently I did not need to worry about on
 
 
         html += '<section class="col-md-4 col-sm-6 col-xs-12">' +
-            '<img class="img-responsive" src="images/nyplPurple.jpg" alt="police guy from nypl digital" />' +
             '<a href=' + content[i].link + '>' +
-            '<h3 class="project">' + content[i].name + '</h3>' +
+            '<img class="img-responsive" src="images/nyplPurple.jpg" alt="police guy from nypl digital" />' +
+            '<h3 class="project">' + content[i].name + '</h3> </a>' +
             '</section>';
 
 }
