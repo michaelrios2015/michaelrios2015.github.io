@@ -2,7 +2,8 @@ var projects = [{
         name: "Project 1: Generic Webiste",
         link: "Project_1_generic_website/index.html",
         description: "A simple webiste designed to show the basic of responsive design using the <b>Bootstrap framework</b>."  
-        + " I should probably make the website more my own, I will add that to the TODO :)"
+        + " I used it as template for my the home page you see with the funny looking cop guy (from NYPL digital collections).  That page is constructed in JavaScript,"
+        + " not sure if it really needs it but it was nice to do some coding and is essentially what they taught us in project 2."
                    
 
 		},
