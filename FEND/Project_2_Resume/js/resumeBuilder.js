@@ -1,41 +1,34 @@
 ///Biography object
 var bio = {
     name: "Mike Rios",
-    role: "Computer Person",
+    role: " Library Guy and a couple of computer skills",
     //object within an object
     contacts: {
-        //mobile: "443-602-6012",
         email: "michael.rios093@gmail.com",
 		github: "michaelrios2015",
         githubLink: "https://github.com/michaelrios2015",
         instgram: "michael_rios2001",
 		instgramLink: "https://www.instagram.com/michael_rios2001/",
-        location: "News York, NY"
+        location: "NYC"
     },
 
     welcomeMessage: "Greetings Earthlings",
     //array
-    skills: ["HTML", "CSS", "Javascript", "Java", "C++", "Nice guy"],
-    //biopic: "images/cat-smaller.jpg"
+    skills: ["HTML", "CSS", "Javascript", "Java", "C++", "Nice guy"],    
 };
 
 
 //varibles for formating
 
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span>%data%</span><hr/>';
+var HTMLheaderRole = '%data%<hr/>';
+var HTMLemail = '<div class="col-md-4 col-sm-6">email: <a href="mailto:%data%">%data%</a></div>';
+var HTMLinstgram = '<div class="col-md-3 col-sm-6">instagram: <a href="%data%">%data%</a></div>';
+var HTMLgithub = '<div class="col-md-3 col-sm-6">github: <a href="%data%">%data%</a></div>';
+var HTMLlocation = '<div class="col-md-2 col-sm-6">location: %data%</div>';
 
-
-//var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-//var HTMLmobile = '<div class="col-md-4 col-sm-6"><span class="orange-text">mobile</span><span>%data%</span></div>';
-var HTMLemail = '<div class="col-md-3 col-sm-6"><span class="orange-text">email</span><a href="mailto:%data%"><span>%data%</span></a></div>';
-var HTMLinstgram = '<div class="col-md-3 col-sm-6"><span class="orange-text">instagram</span><a href="%data%"><span>%data%</span></a></div>';
-var HTMLgithub = '<div class="col-md-3 col-sm-6"><span class="orange-text">github</span><a href="%data%"><span>%data%</span></a></div>';
-var HTMLblog = '<div class="col-md-3 col-sm-6"><span class="orange-text">blog</span><span>%data%</span></div>';
-var HTMLlocation = '<div class="col-md-3 col-sm-6"><span class="orange-text">location</span><span>%data%</span></div>';
-
-var HTMLskillsStart = '<h3 id="skillsH3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li class="flex-item"><span>%data%</span></li>';
+var HTMLskillsStart = '<br><b>Skills at a Glance:</b><ul id="skills" class="flex-box"></ul>';
+var HTMLskills = '<li class="flex-item">%data%</li>';
 
 
 //Display Biography function
@@ -45,7 +38,6 @@ bio.displayBS = function() {
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
     
-	//var formattedHTMLmobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var formattedHTMLemail = HTMLemail.replace("%data%", bio.contacts.email);
 	formattedHTMLemail = formattedHTMLemail.replace("%data%", bio.contacts.email);
     var formattedHTMLinstagram = HTMLinstgram.replace("%data%", bio.contacts.instgramLink);
@@ -54,23 +46,17 @@ bio.displayBS = function() {
     formattedHTMLgithub = formattedHTMLgithub.replace("%data%", bio.contacts.github);
 	var formattedHTMLlocation = HTMLlocation.replace("%data%", bio.contacts.location);
     var formattedHTMLcontactGeneric = '<div class = row>'  + formattedHTMLemail + formattedHTMLgithub + formattedHTMLinstagram + formattedHTMLlocation + '</div>';
-	//var formattedHTMLbioPic = HTMLbioPic.replace("%data%", bio.biopic);
-    //var formattedHTMLwelcome = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
-
-
-
-
+    var formattedHTMLcontactFooter = '<div class = row>'  + formattedHTMLemail + formattedHTMLgithub + formattedHTMLinstagram + '</div>';
 
 	//append to page
 	$("#header").prepend(formattedRole);
     $("#header").prepend(formattedName);
 	$("#topContacts").append(formattedHTMLcontactGeneric);
-    $("#footerContacts").append(formattedHTMLcontactGeneric);
-    //$("#header").append(formattedHTMLbioPic);
-    //$("#header").append(formattedHTMLwelcome);
+    //$("#footerContacts").append(formattedHTMLcontactFooter);
     $("#header").append(HTMLskillsStart);
 
-	for (skill in bio.skills) {
+    //do not really like how this looks but not sure if I want to deal with it at the moment
+    for (skill in bio.skills) {
 
         var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill]);
         $("#skills:last").append(formattedSkills);
@@ -83,26 +69,38 @@ bio.displayBS = function() {
 
 bio.displayBS();
 
-//WORK!!
+
+var HTMLworkStart = '<div class="work-entry"></div>';
+var HTMLworkEmployerUrl = '<a href="%data%">'
+var HTMLworkEmployer = '%data%';
+var HTMLworkTitle = ' - %data%</a><br>';
+var HTMLworkDates = '<div class="date-text">%data%</div>';
+var HTMLworkLocation = '<div class="location-text">%data%</div>';
+var HTMLworkDescription = '<p><br>%data%</p>';
+
+
+//WORK!! would like to list the locations in each system
 var work = {
     "jobs": [{ //array of objects with
-            "employer": "NYPL",
-            "title": "Librarian",
-            "location": "New York, NY",
-            "dates": "2014-Present",
-            "url": "https://www.NYPL.org",
-            "description": "Hopefully being somewhat useful, who knows really"
+            employer: "NYPL",
+            title: "Librarian",
+            location: "New York, NY",
+            dates: "2014-Present",
+            url: "https://www.NYPL.org",
+            description: "Hopefully being somewhat useful, who knows really"
         }, {
-            "employer": "Enoch Pratt Free Library",
-            "title": "Librarian",
-            "location": "Baltimore, MD",
-            "dates": "2003-2014",
-            "url": "https://www.prattlibrary.org",
-            "description": "Helping people in Baltimore, possibly left my poor girlfriend sick and on her own"
+            employer: "Enoch Pratt Free Library",
+            title: "Librarian",
+            location: "Baltimore, MD",
+            dates: "2003-2014",
+            url: "https://www.prattlibrary.org",
+            description: "Helping people in Baltimore, possibly.  Left my poor girlfriend sick and on her own"
         },
 
     ]
  }
+
+
 
 work.display = function() {
 
@@ -118,7 +116,6 @@ work.display = function() {
 		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
 		
-        //console.log(formattedEmployerTitle);
 
         $(".work-entry:last").append(formattedEmployerTitle);
 		$(".work-entry:last").append(formattedDates);
@@ -133,21 +130,21 @@ work.display();
 
 //PROJECTS
 
-var projects = { //array of objects with
+var projects = { //an object made of an array of objects
     "projects": [{
-            "title": "Hangman",
-            "dates": "2014",
-            "description": "Made hangman with C++",
-            "url": "https://github.com/michaelrios2015/Hangman-Project-5",
-            "images": ["images/cat-smaller.jpg"]
+            title: "Hangman",
+            dates: "2014",
+            description: "Made hangman with C++, for a data structures and algorithms class it was fun should probably recreate it in JavaScript.  The cat is for humor.",
+            url: "https://github.com/michaelrios2015/Hangman-Project-5",
+            images: ["images/cat-smaller.jpg"]
 
         },
 		{
-            "title": "Poker",
-            "dates": "2014",
-            "description": "Poker made with Java",
-            "url": "https://github.com/michaelrios2015/Poker",
-            "images": ["images/cat-smaller.jpg"]
+            title: "Poker",
+            dates: "2014",
+            description: "Poker made with Java, for an advanced data structures and algorithms class it was also fun should probably recreate it in JavaScript as well",
+            url: "https://github.com/michaelrios2015/Poker",
+            images: ["images/cat-smaller.jpg"]
         }		 				 
     ]
 }
