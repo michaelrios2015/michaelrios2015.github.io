@@ -6,12 +6,12 @@ var projects = [{
     {
         name: "Project 2: More Circles",
         link: "circlesPart2/\index.html",
-        description: "Even More Cirlces"
+        description: "Even More Cirlces, lines angles dancing and sucg math art love hate cats dogs all of it :)"
     },
     {
         name: "Project 3: The eye is all seeing",
         link: "eye/\index.html",
-        description: "Eye on the eye"
+        description: "Eye on the eye, pulsating fun"
     },
     {
         name: "Project 4: Triangles",
@@ -21,7 +21,7 @@ var projects = [{
     {
         name: "Project 5: Afro",
         link: "trails/\index.html",
-        description: "Hello!!"
+        description: "Hello!! This was one of my firsts "
     }
 ];
 

@@ -1,4 +1,4 @@
-//these varibales should in theory make it easier to modify teh scale of the game though I am not using them all at the moment
+//these varibales should in theory make it easier to modify the scale of the game though I am not using them all at the moment, should I use percentages??
 var GAME_HEIGHT = 606;
 var GAME_WIDTH = 505;
 
@@ -11,7 +11,7 @@ var CHAR_HEIGHT = 70;
 var ENEMY_HEIGHT = 80;
 var ENEMY_WIDTH = 100;
 
-var TOP_SPACE = 52; // not sure why this is here but there is extra white spave on top
+var TOP_SPACE = 52; // not sure why this is here but there is extra white spave on top, am I using it
 
 var CHAR_START_X = GAME_WIDTH / 2 - CHAR_WIDTH;
 var CHAR_START_Y = GAME_HEIGHT - TOP_SPACE - ROW_HEIGHT * 2;
@@ -39,14 +39,14 @@ var Enemy = function() {
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
-    // You should multiply any movement by the dt parameter
+    // You should multiply any movement by the dt parameter (don't know what dt is)
     // which will ensure the game runs at the same speed for
     // all computers.
     //console.log("dt = " + dt);
     if (this.x > GAME_WIDTH) { //gone to the end of the screen
         //reset the bugs should probably be it's own function
         this.x = 0;
-        var col = Math.floor((Math.random() * 4));
+        var col = Math.floor((Math.random() * 4)); //not sure what this does
         this.y = TOP_SPACE + col * ROW_HEIGHT;
         this.speed = Math.floor((Math.random() + player.score / 8) * 3); //speed increases as score increases I am not sure if this is the best way to do it but wanted to at least make a stab at it
         //console.log("speed = " + this.speed);
@@ -62,9 +62,7 @@ Enemy.prototype.render = function() {
 };
 
 
-
-
-//would like to add enemies as players score increase 
+//would like to add enemies as players score increase, starting with four 
 for (var i = 0; i < 4; i++) {
     allEnemies.push(new Enemy());
 }
@@ -149,7 +147,7 @@ Player.prototype.render = function() {
 Player.prototype.handleInput = function(key) {
     //WE ARE PLAYING
     if (!gameLost && !gameStart) {
-        //switch statement would be better more elegent
+        //switch statement would be better more elegent, though not sure if you can use one here
         if (key === "left") {
             if (this.x <= CHAR_START_X - COL_WIDTH * 2) { //gotten to the end of the screen
                 this.x = CHAR_START_X - COL_WIDTH * 2;
@@ -187,7 +185,7 @@ Player.prototype.handleInput = function(key) {
 
     {
         //console.log(key);
-        //THIS DOES NOT SEEM RIGHT
+        //THIS DOES NOT SEEM RIGHT ??
         if (key === "one" || key === "two" || key === "three" || key === "four" || key === "five") {
             gameStart = false;
             player.character(key);
@@ -208,8 +206,6 @@ Player.prototype.handleInput = function(key) {
     }
 
 };
-
-
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.

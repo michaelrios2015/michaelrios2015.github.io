@@ -14,13 +14,6 @@ replace the %data% placeholder text you see in them.
 */
 
 
-var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployerUrl = '<a href="%data%">'
-var HTMLworkEmployer = '%data%';
-var HTMLworkTitle = ' - %data%</a><br>';
-var HTMLworkDates = '<div class="date-text">%data%</div>';
-var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<p><br>%data%</p>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a><br>';
