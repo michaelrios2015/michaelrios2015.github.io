@@ -23,11 +23,16 @@
 				</div>
 			</header>
 
+
+
             <article class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12">
                     <br>
                     <h3><b>Education - Computer Science</b></h3>
-                    <p> so I have been taking Computer Science or just programing classes on and off since 2013, I mean I did take some in college and even on in highschool so that's like 1995
+
+					<button type="button" onclick="myFunction()">More informatation than you need</button>
+
+					<p id="myP"> so I have been taking Computer Science or just programing classes on and off since 2013, I mean I did take some in college and even on in highschool so that's like 1995
                         or so why I did not stick with it I can't really tell you.  well yes I probably can in college is was just really fragile and doing badly in one class was enough 
                         to scare me off I can go on about this I was essentially a paper tiger or some such crazy and asshole you decide.  When I restarted in 2013 it was going  much better 
                         then I decided to move.  It was supposed to be an innoicent move be closer to my family it turns out my girlfriend was seriouly ill.. I would leave in 2014 she would die
@@ -48,8 +53,21 @@
 			<div id="content">
 			</div>
 
-			
-		
+
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myP");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+</script>
+
 		</div>
 
 			<script src="../script.js"> </script>
