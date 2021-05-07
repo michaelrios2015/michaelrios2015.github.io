@@ -3,16 +3,16 @@ not really needed but I wanted to understand objects more */
 
 var projects = [
     {
+        name: "FullStack",
+        link: "fullstack/index.html"
+    },
+    {
+        name: "Android Basics",
+        link: "Android_Basics/index.html"
+    },
+    {
         name: "FEND",
         link: "FEND/index.html"
-    },
-	{
-        name: "Web Animation",
-        link: "Random_Javascript/index.html"
-    },
-	{
-        name: "Websites",
-        link: "Web_sites/index.html"
     },
 	{
         name: "C++ Projects",
@@ -23,11 +23,10 @@ var projects = [
         link: "java_projects/index.html"
     },
     {
-        name: "Android Basics",
-        link: "Android_Basics/index.html"
+        name: "Web Animation",
+        link: "Random_Javascript/index.html"
     }
     
-
 ];
 
 
@@ -74,21 +73,23 @@ function displayProjects(contents) {
 		//adds info for each project
         console.log(i);
         html += '<div class="row">' +
-            '<div class="col-md-12 col-sm-12 col-xs-12">' +
-            '<hr />' +
-            '</div>' +
-            '</div>' +
+                    '<div class="col-md-12 col-sm-12 col-xs-12">' +
+                    '<hr />' +
+                    '</div>' +
+                '</div>' +
 			//the projects
             '<section class="row">' +
-            '<div class="col-md-12 col-sm-12 col-xs-12">' +
-            '<p><a href=' + contents[i].link + '><h3>' + contents[i].name + '</h3></a></p>' +
-            '<p>' + contents[i].description + '</p>' +
-            '</div>' +
+                '<div class="col-md-12 col-sm-12 col-xs-12">' +
+                '<h3><a href=' + contents[i].link + '>' + contents[i].name + '</a></h3>' +
+                '<p>' + contents[i].description + '</p>' +
+                '</div>' +
             '</section>'
 
     }
 
     html += '</div>';
+
+    console.log(html)
 
     // append string to div
     $("#content").append(html);
