@@ -87,7 +87,7 @@ function displayProjects(contents) {
 
     }
 
-    html += '</div>';
+    html += '<p>It\'s a TRAP!! Go back to the <a href="../index.html">main page</a></p></div>';
 
     console.log(html)
 
