@@ -1,18 +1,23 @@
 .container {
-	margin: auto;
-    min-width: 200px;
+  margin: auto;
+  min-width: 200px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 hr {
-    border: none;
-    height: .5em;
-    /* Set the hr color */
-    color: #333; /* old IE */
-    background-color: #333; /* Modern Browsers */
+  border: none;
+  height: 0.5em;
+  /* Set the hr color */
+  color: #333; /* old IE */
+  background-color: #333; /* Modern Browsers */
 }
 
 section {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 /*
@@ -27,38 +32,33 @@ article p {
 }
 */
 #cat {
-    margin-top: 1em;
+  margin-top: 1em;
 }
 
-.modal-body{
-    margin-right: 25%;
-    margin-left: 25%; 
+.modal-body {
+  margin-right: 25%;
+  margin-left: 25%;
 }
 
-.title{
-    text-align: right;
-    text-transform: uppercase;
+.title {
+  text-align: right;
+  text-transform: uppercase;
 }
 
 .project {
-    text-align: center;
-    font-size: 1.5em;
+  text-align: center;
+  font-size: 1.5em;
 }
-
-
 
 @media (max-width: 768px) {
-
-    .project {
+  .project {
     text-align: left;
-}
-    .title{
+  }
+  .title {
     text-align: left;
+  }
 
-}
-
-	.img-responsive{
-		display: none;}
-
-    
+  .img-responsive {
+    display: none;
+  }
 }
