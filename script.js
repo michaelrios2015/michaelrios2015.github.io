@@ -3,7 +3,7 @@ not really needed but I wanted to understand objects more */
 
 var projects = [
     {
-        name: "FullStack",
+        name: "Full Stack",
         link: "fullstack/index.html"
     },
     {
