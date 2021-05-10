@@ -1,7 +1,7 @@
 var projects = [{
         name: "Project 1: Circles",
         link: "circles/\index.html",
-        description: "Fun Circles, it draws a lot of lines really close together which is apperently a thing or at least I though it was one"
+        description: "Fun Circles, it draws a lot of lines really close together which is apperently a thing or at least I thought it was one"
     },
     {
         name: "Project 2: More Circles",
