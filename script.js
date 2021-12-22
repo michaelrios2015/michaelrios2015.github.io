@@ -43,7 +43,7 @@ var html = ""; //declaring string
 
     html += '<div class="row">';//building string
 
-for (var i = 0; i < length; i++) { //apperently I did not need to worry about only having three in each row 
+for (var i = 0; i < 3; i++) { //apperently I did not need to worry about only having three in each row 
 
 
         html += '<section class="col-md-4 col-sm-6 col-xs-12">' +
