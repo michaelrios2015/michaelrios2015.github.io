@@ -9,19 +9,20 @@
   <title>Resume</title>
 
   <!-- Load the page styles. -->
-          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link href="css/style.css" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  
+
 
 
   <!--
   Uncomment the <script> tag below when you're ready to add an interactive
   Google Map to your resume!
   -->
-     <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBhfx5ztQ2WuiZyMWQTDtbdb_UEO304344"></script>
-    
-    
+  <script
+    src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBhfx5ztQ2WuiZyMWQTDtbdb_UEO304344"></script>
+
+
   <meta name="viewport" content="width=device-width">
 </head>
 
@@ -38,11 +39,11 @@ redesign so I can expand the sections??
   <div id="main">
 
 
-    <div id="header" class='container'> 
+    <div id="header" class='container'>
 
-      <div id="topContacts" ></div>
+      <div id="topContacts"></div>
     </div>
-	
+
     <div style='clear: both;'></div>
     <div id="workExperience" class='gray'>
       <h2>Work Experience</h2>
@@ -53,48 +54,49 @@ redesign so I can expand the sections??
     <div id="education" class='gray'>
       <h2>Education</h2>
     </div>
-	
+
     <div id="mapDiv">
       <h2>Where I've Lived and Worked</h2>
     </div>
 
-<!--    <div id="letsConnect" class='dark-gray'>
+    <!--    <div id="letsConnect" class='dark-gray'>
       <h2 class='orange center-text'>Let's Connect</h2>
         <ul id="footerContacts" class="flex-box">
       </ul>
     </div> -->
   </div>
 
-      <!-- More on helper.js in the class -->
+  <!-- More on helper.js in the class -->
   <script src="js/helper.js"></script>
-    
+
   <script src="js/resumeBuilder.js"></script>
 
 
-    
+
   <script type="text/javascript">
 
-    if(document.getElementsByClassName('flex-item').length === 0) {
+    if (document.getElementsByClassName('flex-item').length === 0) {
       document.getElementById('topContacts').style.display = 'none';
     }
-    if(document.getElementsByTagName('h1').length === 0) {
+    if (document.getElementsByTagName('h1').length === 0) {
       document.getElementById('header').style.display = 'none';
     }
-    if(document.getElementsByClassName('work-entry').length === 0) {
+    if (document.getElementsByClassName('work-entry').length === 0) {
       document.getElementById('workExperience').style.display = 'none';
     }
-    if(document.getElementsByClassName('project-entry').length === 0) {
+    if (document.getElementsByClassName('project-entry').length === 0) {
       document.getElementById('projects').style.display = 'none';
     }
-    if(document.getElementsByClassName('education-entry').length === 0) {
+    if (document.getElementsByClassName('education-entry').length === 0) {
       document.getElementById('education').style.display = 'none';
     }
-    if(document.getElementsByClassName('flex-item').length === 0) {
+    if (document.getElementsByClassName('flex-item').length === 0) {
       document.getElementById('letsConnect').style.display = 'none';
     }
    /* if(document.getElementById('map') === null) {
-      document.getElementById('mapDiv').style.display = 'none';
-    }*/
+       document.getElementById('mapDiv').style.display = 'none';
+     }*/
   </script>
 </body>
+
 </html>
