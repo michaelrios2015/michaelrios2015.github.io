@@ -1,73 +1,1143 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- HEAD -->
 
 <head>
-	<meta name="generator"
-		content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Michael's website, it's outta sight</title>
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="style.css" />
-	<style>
-		body {
-			font-family: 'Roboto', sans-serif;
-		}
-	</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michael Rios — Data Scientist & Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #f5f2ed;
+      --bg2: #ede9e2;
+      --ink: #1a1714;
+      --ink2: #5a5651;
+      --ink3: #8a8580;
+      --accent: #1d3a5f;
+      --accent2: #c8401e;
+      --border: rgba(26, 23, 20, 0.12);
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+      --mono: 'DM Mono', monospace;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 3rem;
+      background: rgba(245, 242, 237, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: var(--ink2);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink2);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 7rem 3rem 4rem;
+      gap: 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-text {}
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--ink2);
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.6rem;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #142d4a;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg2);
+    }
+
+    /* hero right side — stats block */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      border: 1px solid var(--border);
+      background: var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .stat-block {
+      background: var(--bg);
+      padding: 2rem 2.5rem;
+    }
+
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 3.2rem;
+      line-height: 1;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      color: var(--ink3);
+      text-transform: uppercase;
+    }
+
+    .stat-sub {
+      font-size: 0.9rem;
+      color: var(--ink2);
+      margin-top: 0.3rem;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 6rem 3rem;
+      border-bottom: 1px solid var(--border);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink3);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 3rem;
+      color: var(--ink);
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .skill-card {
+      background: var(--bg);
+      padding: 1.8rem 2rem;
+      transition: background 0.2s;
+    }
+
+    .skill-card:hover {
+      background: var(--bg2);
+    }
+
+    .skill-category {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: var(--accent2);
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .skill-card h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      font-weight: 400;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      padding: 0.25rem 0.6rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      color: var(--ink2);
+    }
+
+    /* ── EXPERIENCE ── */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 3rem;
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border);
+      position: relative;
+    }
+
+    .timeline-item:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline-left {}
+
+    .timeline-date {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--ink3);
+      letter-spacing: 0.06em;
+    }
+
+    .timeline-org {
+      font-size: 0.9rem;
+      color: var(--ink2);
+      margin-top: 0.3rem;
+    }
+
+    .timeline-right {}
+
+    .timeline-right h3 {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+    }
+
+    .timeline-right ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .timeline-right ul li {
+      font-size: 0.92rem;
+      color: var(--ink2);
+      padding-left: 1rem;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .timeline-right ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent2);
+    }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .project-card {
+      background: var(--bg);
+      padding: 2rem 2.2rem;
+      transition: background 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      background: var(--bg2);
+    }
+
+    .project-type {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      color: var(--accent2);
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+      height: 1.2rem;
+    }
+
+    .project-card h3 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+      line-height: 1.3;
+      min-height: 3.4rem;
+    }
+
+    .project-card p {
+      font-size: 0.88rem;
+      color: var(--ink2);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 1.4rem;
+    }
+
+    .project-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+
+    .project-link {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .project-link:hover {
+      border-color: var(--accent);
+    }
+
+    /* ── EDUCATION ── */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .edu-card {
+      background: var(--bg);
+      padding: 2rem 2.2rem;
+    }
+
+    .edu-degree {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+    }
+
+    .edu-school {
+      font-size: 0.88rem;
+      color: var(--ink2);
+      margin-bottom: 0.5rem;
+    }
+
+    .edu-meta {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ink3);
+      letter-spacing: 0.06em;
+    }
+
+    .gpa-badge {
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      padding: 0.2rem 0.6rem;
+      background: #d4ede3;
+      color: #0f6e56;
+      border-radius: 2px;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-text h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-text p {
+      color: var(--ink2);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .contact-link-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 0;
+      border-top: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--ink);
+      transition: color 0.2s;
+    }
+
+    .contact-link-item:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-link-item:hover {
+      color: var(--accent);
+    }
+
+    .contact-link-label {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .contact-link-value {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--ink3);
+    }
+
+    .contact-link-item:hover .contact-link-value {
+      color: var(--accent);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ink3);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── FEATURED PROJECT ── */
+    .featured-project {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 3rem;
+    }
+
+    .featured-header {
+      background: var(--accent);
+      color: #fff;
+      padding: 1.8rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .featured-badge {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 0.25rem 0.7rem;
+      border-radius: 2px;
+      color: #fff;
+    }
+
+    .featured-header h3 {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: #fff;
+      margin-top: 0.5rem;
+    }
+
+    .featured-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      background: var(--border);
+    }
+
+    .featured-col {
+      background: var(--bg);
+      padding: 2rem 2.5rem;
+    }
+
+    .featured-col h4 {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: var(--accent2);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .featured-col p {
+      font-size: 0.92rem;
+      color: var(--ink2);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .pipeline-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .pipeline-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      font-size: 0.88rem;
+      color: var(--ink2);
+    }
+
+    .step-num {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--accent2);
+      min-width: 1.4rem;
+      padding-top: 0.15rem;
+    }
+
+    .featured-links {
+      background: var(--bg);
+      padding: 1.4rem 2.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .about-col {
+      background: var(--bg);
+      padding: 2.5rem;
+    }
+
+    .about-col p {
+      font-size: 0.95rem;
+      color: var(--ink2);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .about-col p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards;
+    }
+
+    .delay-1 {
+      animation-delay: 0.15s;
+    }
+
+    .delay-2 {
+      animation-delay: 0.3s;
+    }
+
+    .delay-3 {
+      animation-delay: 0.45s;
+    }
+
+    .delay-4 {
+      animation-delay: 0.6s;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .nav-links {
+        gap: 1.2rem;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 6rem 1.5rem 3rem;
+        gap: 3rem;
+      }
+
+      section {
+        padding: 4rem 1.5rem;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      footer {
+        padding: 1.5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
-	<!-- BODY -->
-	<!-- Container is always needed in bootstrap  -->
-	<div class="container">
-		<header>
-			<!-- logo  -->
-			<div class="row">
-				<div class="col-md-6 col-sm-6 col-xs-12">
-					<!-- add text when you hover?? -->
-					<img id="cat" class="img-responsive img-circle" src="images/cat-small.jpg" alt="sad cat" />
-					<!-- think I am supposed to have multiple sizes of phots for different screens  -->
-				</div>
-				<!-- Me  -->
-				<div class="col-md-6 col-sm-6 col-xs-12 title">
-					<h1>Michael Rios</h1>
-					<h4>Web Guy, like Spiderman??</h4>
-				</div>
-			</div>
-			<!-- LINE -->
-			<div class="row">
-				<div class="col-md-12 col-sm-12 col-xs-12">
-					<hr />
-				</div>
-			</div>
 
-		</header>
-		<!-- PROJECTS line 1 now populated with javasipt-->
-		<div id="content">
-		</div>
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">MR.&nbsp;©&nbsp;2025</a>
+    <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-		<footer>
-			<div class="row">
-				<div class="col-md-12 col-sm-12 col-xs-12">
-					<hr />
-				</div>
-				<div class="col-md-6 col-sm-6 col-xs-12">
-					<h1><a href="aboutMe/index.html">About me</a></h1>
-					<h4><a href="mailto:michael.rios093@gmail.com">michael.rios093@gmail.com</a></h4>
-				</div>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow fade-up">Available for new opportunities</p>
+      <h1 class="fade-up delay-1">Michael<br><em>Rios</em></h1>
+      <p class="hero-desc fade-up delay-2">
+        Data scientist and software engineer based in New York. I build machine learning systems, extract insight from
+        messy data, and ship full-stack applications that do something real.
+      </p>
+      <div class="hero-cta fade-up delay-3">
+        <a href="mailto:michael.rios093@gmail.com"
+          class="btn btn-primary">Get in touch</a>
+        <a href="#projects" class="btn btn-secondary">See my work</a>
+      </div>
+    </div>
+    <div class="hero-right fade-up delay-2">
+      <div class="stat-block">
+        <div class="stat-num">3.97</div>
+        <div class="stat-label">GPA</div>
+        <div class="stat-sub">M.S. Computer Science, Fordham University</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">4+</div>
+        <div class="stat-label">Years</div>
+        <div class="stat-sub">Full-stack & data engineering experience</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">NYC</div>
+        <div class="stat-label">Based in</div>
+        <div class="stat-sub">Open to remote and hybrid roles</div>
+      </div>
+    </div>
+  </div>
 
-			</div>
+  <!-- SKILLS -->
+  <section id="skills">
+    <p class="section-label">What I work with</p>
+    <h2 class="section-title">Skills &amp; Tools</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <p class="skill-category">Machine Learning</p>
+        <h3>Data Science &amp; ML</h3>
+        <div class="tag-list">
+          <span class="tag">Sklearn</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">Matplotlib</span>
+          <span class="tag">Seaborn</span>
+          <span class="tag">Imblearn</span>
+          <span class="tag">SciPy</span>
+          <span class="tag">Jupyter</span>
+          <span class="tag">Anaconda</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <p class="skill-category">Languages</p>
+        <h3>Programming</h3>
+        <div class="tag-list">
+          <span class="tag">Python</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">C++</span>
+          <span class="tag">Java</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">F#</span>
+          <span class="tag">Prolog</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <p class="skill-category">Web &amp; Backend</p>
+        <h3>Full-Stack Dev</h3>
+        <div class="tag-list">
+          <span class="tag">React</span>
+          <span class="tag">Redux</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">PostgreSQL</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <p class="skill-category">Data &amp; Visualization</p>
+        <h3>Analysis Tools</h3>
+        <div class="tag-list">
+          <span class="tag">Tableau</span>
+          <span class="tag">Matplotlib</span>
+          <span class="tag">Seaborn</span>
+          <span class="tag">LaTeX</span>
+          <span class="tag">Anaconda</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">VS Code</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-		</footer>
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <p class="section-label">Where I've worked</p>
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
 
-	</div>
-</body>
-<script src="script.js"> </script>
-<script> displayContentHomePage(projects); </script>
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <p class="timeline-date">Sept–Dec 2025</p>
+          <p class="timeline-org">Fordham University</p>
+        </div>
+        <div class="timeline-right">
+          <h3>Adjunct Lecturer — Database Systems</h3>
+          <ul>
+            <li>Taught Database Systems, combining existing curriculum with original lecture content, examples, and
+              assessments</li>
+            <li>Supported student comprehension through structured coursework and direct follow-up</li>
+          </ul>
+        </div>
+      </div>
 
-</html>
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <p class="timeline-date">Sept 2024–May 2025</p>
+          <p class="timeline-org">Fordham University</p>
+        </div>
+        <div class="timeline-right">
+          <h3>Researcher — Educational Data Mining Lab</h3>
+          <ul>
+            <li>Clustered college course descriptions using scikit-learn and compared results with existing academic
+              categorizations</li>
+            <li>Used generative AI to synthesize new course syllabi from historical ones</li>
+            <li>Contributed to early-stage research on a custom grading analysis tool</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <p class="timeline-date">Oct 2021–Present</p>
+          <p class="timeline-org">Fordham University</p>
+        </div>
+        <div class="timeline-right">
+          <h3>Reference Librarian &amp; Technical Support Admin</h3>
+          <ul>
+            <li>Delivers instruction on library research tools to students and faculty</li>
+            <li>Maintains computer systems — software updates, hardware upgrades</li>
+            <li>Cleaned and analyzed catalog data using Python/Pandas to support inventory operations</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <p class="timeline-date">Oct 2019–Present</p>
+          <p class="timeline-org">Self-Employed</p>
+        </div>
+        <div class="timeline-right">
+          <h3>Freelance Software Engineer</h3>
+          <ul>
+            <li>Built full-stack applications using React, Node.js, and PostgreSQL with custom RESTful APIs</li>
+            <li>Designed automated data pipelines in Python and SQL pulling from Ginnie Mae data sources, updated
+              monthly</li>
+            <li>Migrated client websites across hosting platforms (Bluehost → Google Cloud)</li>
+            <li>Customized client e-commerce storefronts and integrated third-party services</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <p class="section-label">Things I've built</p>
+    <h2 class="section-title">Projects</h2>
+
+    <!-- FEATURED -->
+    <div class="featured-project">
+      <div class="featured-header">
+        <div>
+          <span class="featured-badge">Featured Project</span>
+          <h3>CMO Data Viewer</h3>
+        </div>
+        <div class="tag-list">
+          <span class="tag"
+            style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.2);color:#fff;">Python</span>
+          <span class="tag"
+            style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.2);color:#fff;">React</span>
+          <span class="tag"
+            style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.2);color:#fff;">PostgreSQL</span>
+          <span class="tag"
+            style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.2);color:#fff;">Selenium</span>
+          <span class="tag"
+            style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.2);color:#fff;">Node.js</span>
+        </div>
+      </div>
+      <div class="featured-body">
+        <div class="featured-col">
+          <h4>What it is</h4>
+          <p>A production financial data application that tracks Ginnie Mae mortgage-backed securities (MBS) pools. Raw
+            government data is automatically ingested, processed, and published to a live web interface — updated on a
+            real business-day schedule, multiple times per month.</p>
+          <p>This is not a demo. The data pipeline runs on a schedule and the application serves real, current financial
+            data to real users.</p>
+        </div>
+        <div class="featured-col">
+          <h4>How it works</h4>
+          <div class="pipeline-steps">
+            <div class="pipeline-step"><span class="step-num">01</span><span>Selenium scripts automatically download
+                Ginnie Mae source files on a business-day schedule</span></div>
+            <div class="pipeline-step"><span class="step-num">02</span><span>Python parsers extract, clean, and
+                structure the raw datasets</span></div>
+            <div class="pipeline-step"><span class="step-num">03</span><span>Financial calculations (CPR speeds, pool
+                metrics) are computed per business day</span></div>
+            <div class="pipeline-step"><span class="step-num">04</span><span>Results are loaded into PostgreSQL via
+                modular db_loader functions</span></div>
+            <div class="pipeline-step"><span class="step-num">05</span><span>Custom REST APIs serve processed data to a
+                React/Redux frontend</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="featured-links">
+        <a href="https://cmo-data-two.herokuapp.com/#/" class="btn btn-primary" target="_blank">Live Application</a>
+        <a href="https://github.com/michaelrios2015/cmoDataPretty" class="btn btn-secondary" target="_blank">Frontend
+          Repo</a>
+        <a href="https://github.com/michaelrios2015/capstone_test" class="btn btn-secondary" target="_blank">Data
+          Pipeline Repo</a>
+      </div>
+    </div>
+
+    <!-- OTHER PROJECTS -->
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <p class="project-type">Neural Networks</p>
+        <h3>Multi-Layer Neural Network from Scratch</h3>
+        <p>Built a fully functional multilayer neural network in plain Python — no ML libraries. Supports configurable
+          layers, neuron counts, and neural suppression.</p>
+        <div class="project-footer">
+          <div class="tag-list"><span class="tag">Python</span></div>
+          <div style="display:flex;gap:1rem;">
+            <a href="https://github.com/michaelrios2015/ML/tree/main/final_project" class="project-link"
+              target="_blank">Code →</a>
+            <a href="https://github.com/michaelrios2015/ML/blob/main/final_project/FINAL%20PROJECT.pdf"
+              class="project-link" target="_blank">Paper →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <p class="project-type">Classification</p>
+        <h3>Book Genre Classifier</h3>
+        <p>Classified books into seven genres using Sklearn. Compared SVM and Naive Bayes classifiers using confusion
+          matrices to evaluate model accuracy.</p>
+        <div class="project-footer">
+          <div class="tag-list"><span class="tag">Python</span><span class="tag">Sklearn</span></div>
+          <div style="display:flex;gap:1rem;">
+            <a href="https://github.com/michaelrios2015/dm_project/blob/main/project.ipynb" class="project-link"
+              target="_blank">Code →</a>
+            <a href="https://github.com/michaelrios2015/dm_project/blob/main/final%20project.docx.pdf"
+              class="project-link" target="_blank">Results →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <p class="project-type">Data Visualization</p>
+        <h3>Citi Bike NYC Analysis</h3>
+        <p>Explored biking patterns across New York City using Citi Bike's open data. Pre-processed raw data in Python
+          and built the final visualization in Tableau.</p>
+        <div class="project-footer">
+          <div class="tag-list"><span class="tag">Python</span><span class="tag">Pandas</span><span
+              class="tag">Tableau</span></div>
+          <div style="display:flex;gap:1rem;">
+            <a href="https://github.com/michaelrios2015/citi_bike/blob/main/project.ipynb" class="project-link"
+              target="_blank">Code →</a>
+            <a href="https://public.tableau.com/app/search/vizzes/citi%20bikes%20and%20rents" class="project-link"
+              target="_blank">Tableau →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <p class="project-type">NLP / Clustering</p>
+        <h3>Course Description Clustering</h3>
+        <p>Research project clustering university course descriptions with scikit-learn and comparing automated
+          groupings to existing academic categorizations.</p>
+        <div class="project-footer">
+          <div class="tag-list"><span class="tag">Python</span><span class="tag">Sklearn</span><span
+              class="tag">NLP</span></div>
+          <a href="https://github.com/michaelrios2015/edm_lab" class="project-link" target="_blank">GitHub →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <p class="section-label">Academic background</p>
+    <h2 class="section-title">Education</h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <p class="edu-degree">M.S. Computer Science</p>
+        <p class="edu-school">Fordham University — New York, NY</p>
+        <p class="edu-meta">Graduated May 2025</p>
+        <span class="gpa-badge">GPA 3.97</span>
+      </div>
+      <div class="edu-card">
+        <p class="edu-degree">M.L.S. Library Science</p>
+        <p class="edu-school">Queens College, CUNY — New York, NY</p>
+        <p class="edu-meta">Graduated 2003</p>
+      </div>
+      <div class="edu-card">
+        <p class="edu-degree">Certificate in Software Engineering</p>
+        <p class="edu-school">Fullstack Academy — New York, NY</p>
+        <p class="edu-meta">Completed April 2021</p>
+      </div>
+      <div class="edu-card">
+        <p class="edu-degree">B.A. Art</p>
+        <p class="edu-school">Columbia University — New York, NY</p>
+        <p class="edu-meta">Graduated 1999</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <p class="section-label">Background</p>
+    <h2 class="section-title">About Me</h2>
+    <div class="about-grid">
+      <div class="about-col">
+        <p>My name is Michael, though most people call me Mike. I've been a public librarian for most of my adult life —
+          NYPL, Enoch Pratt, and now Fordham University — which means I spent a long time thinking seriously about how
+          information is organized, found, and made useful to people before I ever wrote a line of Python.</p>
+        <p>In 2021 I finished a software engineering certificate at Fullstack Academy and discovered I actually loved
+          building things. So I kept going — earning my M.S. in Computer Science from Fordham in 2025 with a 3.97 GPA,
+          while working full time. Along the way I built a live financial data pipeline, taught Database Systems as an
+          adjunct lecturer, and contributed to research on NLP and course descriptions.</p>
+      </div>
+      <div class="about-col">
+        <p>The librarian background shapes how I think about data problems — not just how to build the pipeline, but
+          what question is actually worth asking, and how to explain the answer to someone who doesn't want to read a
+          technical report. Twenty-two years of helping people find things will do that.</p>
+        <p>I studied Art at Columbia, which might seem unrelated but trained me to think carefully about how things look
+          and feel — something that turns out to matter when you're presenting data to people who have to make decisions
+          from it.</p>
+        <p>I'm currently looking for roles in data science, data engineering, or software engineering. Also happy to
+          talk about freelance work of almost any kind.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-grid">
+      <div class="contact-text">
+        <p class="section-label">Let's work together</p>
+        <h2>Open to new<br><em style="font-family: var(--serif); font-style: italic;">opportunities</em></h2>
+        <p>I'm actively looking for roles in data science, machine learning, or software engineering. If you have
+          something interesting, I'd love to hear about it.</p>
+        <a href="mailto:michael.rios093@gmail.com"
+          class="btn btn-primary">Send me an email</a>
+      </div>
+      <div>
+        <div class="contact-links">
+          <a href="mailto:michael.rios093@gmail.com"
+            class="contact-link-item">
+            <span class="contact-link-label">Email</span>
+            <span class="contact-link-value">michael.rios093@gmail.com</span>
+          </a>
+          <a href="https://www.linkedin.com/in/michael-george-rios/" target="_blank" class="contact-link-item">
+            <span class="contact-link-label">LinkedIn</span>
+            <span class="contact-link-value">michael-george-rios</span>
+          </a>
+          <a href="https://github.com/michaelrios2015" target="_blank" class="contact-link-item">
+            <span class="contact-link-label">GitHub</span>
+            <span class="contact-link-value">michaelrios2015</span>
+          </a>
